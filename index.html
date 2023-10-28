@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Шпаргалка по JS</title>
     <link rel="stylesheet" href="styles/css/normalize.css" />
-	<link rel="stylesheet" href="styles/css/style.css" />
-</head>
-<body>
+    <link rel="stylesheet" href="styles/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
     <!-- Одностраничный сайт -->
     <div class="modal-window">
+
         <!-- модальное окно с формой ввода для добавления новой карточки -->
         <a class="show-btn" href="javascript:void(0)" onclick = "document.getElementById('envelope').style.display='block';document.getElementById('fade').style.display='block'">Create new card</a>
             <div id="envelope" class="envelope">
@@ -25,32 +34,75 @@
     </div>
 
     <header class="header">
-        <div class="logo">
-            картинка с логотипом
+
+        <div class="header-stroke">
+            <div class="header__logo">
+                <img src="./assets/logo/logo_CmndFe.svg" alt="logo">
+            </div>
+            <div class="header__info">
+                <p>Learn to JAVA SCRIPT</p>
+                <p>With our JS cheatSheet</p>
+            </div>
+            <div class="header__find">
+                <div><input type="text"><input type="submit"></div>
+                <div>
+                    <p>Find card</p>
+                </div>
+            </div>
+            <div class="header__create">
+                <div class="create-button"><img src="" alt=""></div>
+                <div class="create-text">
+                    <p>Create card</p>
+                </div>
+            </div>
         </div>
-        <button class="button add">
-            Добавить
-        </button>
-    </header>
+
+       </header>
 
     <main>
-        <section class="search">
-            Тут строка поиска (input+button)
-        </section>
-
+     
         <section class="cards">
-            тут все карточки 
+            тут все карточки
         </section>
     </main>
 
     <footer class="footer">
-        <div class="footer__info">
-            тут могут быть имена разработчиков class="footer__info-name", или техническое описание про бэк, или что-то еще
+        <div class="footer-stroke">
+            <div class="footer__info">
+                Communicate with us
+            </div>
+            <div class="footer__info-media">
+                <div class="media__social">
+                    <a href="https:// www.facebook.com" target="_blank">
+                        <img src="facebook_logo.png" alt="Facebook">
+                    </a>
+                </div>
+                <div class="media__social">
+                    <a href="https:// www.twitter.com" target="_blank">
+                        <img src="twitter_logo.png" alt="Twitter">
+                    </a>
+                </div>
+                <div class="media__social">
+                    <a href="https:// www.instagram.com" target="_blank">
+                        <img src="instagram_logo.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__info-logo">
+                <div class="logo__text">
+                    Made by
+                    CMND+Fem collab
+                </div>
+                <div class="logo__pic">
+                    <img src="logo.svg" alt="logo">
+                </div>
+            </div>
         </div>
-        <div class="footer__info-text"> Все права защищены</div>
     </footer>
 
     <script src="scripts/index.js"></script>
 
 </body>
+
 </html>
+

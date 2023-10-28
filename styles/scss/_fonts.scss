@@ -1,6 +1,10 @@
-//Переменные для шрифтов, например: 
+//Переменные для шрифтов, например:
+// @font-face {
+//     src: url(/assets/fonts/имяФайлаСоШрифтом); // Путь к шрифту
+//         font-family: 'как назовем??';
+// }
 
 @font-face {
-    src: url(/assets/fonts/имяФайлаСоШрифтом); // Путь к шрифту
-        font-family: 'как назовем??';
+  src: url(/assets/fonts/имяФайлаСоШрифтом);
+  font-family: "Helvetica";
 }
