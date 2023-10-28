@@ -1,3 +1,4 @@
+//Общие стили для всей страницы 
 .modal-window{
     padding: 50px;
     position: fixed; top: 50%; left: 50%;
@@ -60,9 +61,9 @@ input[type=text] {
 .your-message {
     width: 50%;
     height: 2.5rem;
-    display: inline-block
+    display: inline-block;
     border-radius: 0.625rem;
-    border: 2px solid #00000;
+    border: 2px solid #000;
     background: rgba(255, 255, 255, 0.00);
     margin: 50px 0;
 }
