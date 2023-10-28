@@ -1,0 +1,92 @@
+.envelope {
+    width: 58.125rem;
+height: 9.9375rem;
+flex-shrink: 0;
+border-radius: 1.25rem;
+background: #FFF;
+box-shadow: 0px 0px 52px 25px #2C2C2C;
+margin-top: 0 0 0 100;
+}
+/* формируем кнопку закрытия,
+** размеры, положение на форме  */
+.close-btn {
+    width: 10.9375rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border-radius: 0.625rem;
+border: 2px solid #000;
+background: rgba(255, 255, 255, 0.00);
+box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* оформляем заголовок формы */
+.title {
+    width: 18.75rem;
+    color: #000;
+font-family: Montserrat;
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 600;
+line-height: 1.25rem;
+}
+/* стили для полей ввода */
+input[type=text] {
+    font-family: "Trebuchet MS",Tahoma,Arial,sans-serif;
+    font-size: 13px;
+    background-color:rgb(255,255,255);
+    color: #787474;
+    padding-left: 10px;
+    width:208px;
+    height:33px;
+    border-color:rgb(182,182,182);
+    border-width:1px;
+    border-style:solid;
+    -moz-box-shadow:0px 1px 0px 0px rgba(255,255,255,0.5) ,inset 0px 1px 2px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow:0px 1px 0px 0px rgba(255,255,255,0.5) ,inset 0px 1px 2px 0px rgba(0,0,0,0.2);
+    box-shadow:0px 1px 0px 0px rgba(255,255,255,0.5) ,inset 0px 1px 2px 0px rgba(0,0,0,0.2);
+    -ms-filter:"progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #80ffffff,Positive = true)";
+    filter:progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #80ffffff,Positive = true);
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+/* меняем оформление полей ввода при фокусе */
+input[type=text]:focus, .your-message:focus {
+    outline: none;
+    background-color:rgb(255,255,255);
+    border-color:rgb(126,139,153);
+    border: 1px solid;
+    -moz-box-shadow:0px 0px 5px 0px rgba(168,178,188,0.75) ,0px 1px 0px 0px rgba(255,255,255,0.5) ,inset 0px 1px 2px 0px rgba(0,0,0,0.4);
+    -webkit-box-shadow:0px 0px 5px 0px rgba(168,178,188,0.75) ,0px 1px 0px 0px rgba(255,255,255,0.5) ,inset 0px 1px 2px 0px rgba(0,0,0,0.4);
+    box-shadow:0px 0px 5px 0px rgba(168,178,188,0.75) ,0px 1px 0px 0px rgba(255,255,255,0.5) ,inset 0px 1px 2px 0px rgba(0,0,0,0.4);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Glow(Color=#bfa8b2bc,Strength=5)
+            progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #80ffffff,Positive = true)";
+    filter:progid:DXImageTransform.Microsoft.Glow(Color=#bfa8b2bc,Strength=5)
+            progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #80ffffff,Positive = true);
+}
+.your-message {
+    width: 50%;
+    height: 2.5rem;
+    display: inline-block
+    border-radius: 0.625rem;
+    border: 2px solid #00000;
+    background: rgba(255, 255, 255, 0.00);
+    margin: 50px 0;
+}
+
+.heading {
+    position: absolute;
+    top: 100px;
+    left: 40px;
+}
+
+/* оформляем кнопку отправки */
+.send-message {
+background-color: #929FAB;
+width: 10.9375rem;
+height: 2.5rem;
+flex-shrink: 0;
+border-radius: 0.625rem;
+border: 2px solid #000;
+background: rgba(255, 255, 255, 0.00);
+box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.25);
+}
