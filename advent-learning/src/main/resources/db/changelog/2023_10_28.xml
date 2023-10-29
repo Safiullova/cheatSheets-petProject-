@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="init db" author="author name">
+        <sql>
+            create table if not exists card (
+            id bigserial PRIMARY KEY,
+            name varchar NOT NULL,
+            description varchar NOT NULL
+            );
+
+            insert into card(name, description) values ('concat()', 'объединяет два или более массивов и возвращает новый массив.');
+            insert into card(name, description) values ('join()', 'преобразует все элементы массива в строки и объединяет их в одну строку.');
+            insert into card(name, description) values ('push()', 'добавляет один или более элементов в конец массива.');
+            insert into card(name, description) values ('pop()', 'удаляет последний элемент из массива.');
+            insert into card(name, description) values ('shift()', 'удаляет первый элемент из массива.');
+            insert into card(name, description) values ('unshift()', 'добавляет один или более элементов в начало массива.');
+            insert into card(name, description) values ('slice()', 'возвращает новый массив, содержащий выбранные элементы из исходного массива.');
+            insert into card(name, description) values ('splice()', 'изменяет содержимое массива, удаляя, заменяя или добавляя элементы. ');
+            insert into card(name, description) values ('sort()', 'сортирует элементы массива по возрастанию.');
+            insert into card(name, description) values ('reverse()', 'изменяет порядок следования элементов массива на противоположный.');
+
+            insert into card(name, description) values ('length', 'возвращает длину строки.');
+            insert into card(name, description) values ('charAt()', 'возвращает символ по указанному индексу.');
+            insert into card(name, description) values ('concat()', 'объединяет две или более строки и возвращает новую строку.');
+            insert into card(name, description) values ('split()', 'разделяет строку на массив подстрок по заданному разделителю.');
+            insert into card(name, description) values ('trim()', 'удаляет пробельные символы в начале и конце строки.');
+            insert into card(name, description) values ('toUpperCase()', 'преобразует строку к верхнему регистру.');
+            insert into card(name, description) values ('toLowerCase()', 'преобразует строку к нижнему регистру.');
+            insert into card(name, description) values ('indexOf()', 'возвращает индекс первого вхождения подстроки в строку.');
+            insert into card(name, description) values ('lastIndexOf()', 'возвращает индекс последнего вхождения подстроки в строку.');
+            insert into card(name, description) values ('replace()', 'заменяет первое вхождение подстроки другой подстрокой.');
+
+            insert into card(name, description) values ('toExponential()', 'преобразует число в экспоненциальную форму.');
+            insert into card(name, description) values ('toFixed()', 'форматирует число с фиксированной точностью после десятичной запятой.');
+            insert into card(name, description) values ('toString()', 'преобразует число в строку.');
+            insert into card(name, description) values ('parseInt()', 'преобразует строку в целое число.');
+            insert into card(name, description) values ('parseFloat()', 'преобразует строку в число с плавающей точкой.');
+            insert into card(name, description) values ('Math.round()', 'округляет число до ближайшего целого.');
+            insert into card(name, description) values ('Math.ceil()', 'округляет число вверх до ближайшего целого.');
+            insert into card(name, description) values ('Math.floor()', 'округляет число вниз до ближайшего целого.');
+            insert into card(name, description) values ('Math.random()', 'возвращает случайное число от 0 до 1.');
+
+        </sql>
+    </changeSet>
+</databaseChangeLog>
