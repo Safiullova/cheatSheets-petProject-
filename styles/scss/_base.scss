@@ -2,9 +2,9 @@
 *,
 :after,
 :before {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 // body {

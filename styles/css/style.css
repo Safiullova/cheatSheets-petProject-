@@ -1,17 +1,138 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import 'fonts';
- *   |         ^^^^^^^
- *   '
- *   styles\scss\style.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import 'fonts';\d\a   \2502          ^^^^^^^\a   \2575 \a   styles\\scss\\style.scss 1:9  root stylesheet";
+@charset "UTF-8";
+@font-face {
+  src: url(/assets/fonts/имяФайлаСоШрифтом);
+  font-family: "Helvetica";
 }
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.clr1 {
+  background-color: #ffffff;
+}
+
+.clr2 {
+  background-color: #f6e6cf;
+}
+
+.clr3 {
+  background-color: #fea501;
+}
+
+.clr4 {
+  background-color: #aa8946;
+}
+
+.clr5 {
+  background-color: #f88b50;
+}
+
+.clr6 {
+  background-color: #b6400e;
+}
+
+.clr7 {
+  background-color: #a3755b;
+}
+
+.clr8 {
+  background-color: #552706;
+}
+
+.modal-window {
+  padding: 50px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.envelope {
+  width: 58.125rem;
+  height: 9.9375rem;
+  flex-shrink: 0;
+  border-radius: 1.25rem;
+  background: #FFF;
+  box-shadow: 0px 0px 52px 25px #2C2C2C;
+  margin-top: 0 0 0 100;
+}
+
+/* формируем кнопку закрытия,
+** размеры, положение на форме  */
+.close-btn {
+  width: 10.9375rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  border-radius: 0.625rem;
+  border: 2px solid #000;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* оформляем заголовок формы */
+.title {
+  width: 18.75rem;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.25rem;
+}
+
+/* стили для полей ввода */
+input[type=text] {
+  font-family: Montserrat;
+  font-size: 13px;
+  background-color: rgb(255, 255, 255);
+  color: #787474;
+  padding-left: 10px;
+  width: 208px;
+  height: 33px;
+  border-color: rgb(182, 182, 182);
+  border-width: 1px;
+  border-style: solid;
+  -moz-box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.5), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.5), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.5), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #80ffffff,Positive = true)";
+  filter: progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #80ffffff,Positive = true);
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+
+.your-message {
+  width: 50%;
+  height: 2.5rem;
+  display: inline-block;
+  border-radius: 0.625rem;
+  border: 2px solid #000;
+  background: rgba(255, 255, 255, 0);
+  margin: 50px 0;
+}
+
+.heading {
+  position: absolute;
+  top: 100px;
+  left: 40px;
+}
+
+/* оформляем кнопку отправки */
+.send-message {
+  background-color: #929FAB;
+  width: 10.9375rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  border-radius: 0.625rem;
+  border: 2px solid #000;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.25);
+}
+
+/*# sourceMappingURL=style.css.map */
