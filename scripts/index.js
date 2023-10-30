@@ -4,18 +4,60 @@
 
 // для отрисовки карточек и их анимации
 
-class GET {
-    static async getCards() {
-      try {
-        const resp = await fetch("http://localhost:8080/cards");
-        const data = await resp.json();
-        console.log(data);
-        return data;
-      } catch (e) {
-        console.error(e);
-      }
-    }
-  }
+const modal = document.querySelector('#modal');
+const close = document.querySelector('.modal__card-close');
+const demo = document.querySelector('.demo');
+const cardList = document.querySelector('.cards');
 
-  const result = GET.getCards();
-  console.log(result)
+
+close.onclick = function () {
+  modal.style.display = 'none';
+};
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+};
+
+function autoComplete () {
+  fetch ("http://localhost:8080/cards")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    const namesList = data.map(item => item.name);
+    let card = "";
+    for (let i = 0; i <= namesList.length; i++) {
+      card += `<div class="card">
+            <p class="card-titly">${namesList[i]}</p>
+            <p class="card-text none">${namesList[i]}</p>
+            </div>`
+    }
+    cardList.innerHTML = card;
+    // const cardsArr = document.querySelectorAll('.card');
+    // console.log(cardsArr)
+    
+    cardList.onclick = function (event) {
+      let div = event.target.closest('div'); 
+
+      if (!div) return; 
+    
+      if (!cardList.contains(div)) return; 
+      
+      modal.style.display = 'block';
+      // console.log(div)
+
+
+    }
+    
+  })
+  .catch ((e) => {
+    console.error(e);
+    demo.style.display = 'flex';
+  })
+
+
+};
+
+autoComplete();

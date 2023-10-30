@@ -7,9 +7,14 @@
     padding: 0;
 }
 
-// body {
-//     font-family: 'Moniqa-LightParagraph';
-//     font-size: 24px;
-//     color: $white-color;
-//     background-color: $bg-color;
-// }
+body {
+    // font-family: ;
+    // font-size: ;
+    color: $wt-clr;
+    background-color: $bg-clr;
+}
+
+main {
+    border-top: 1.5px solid $wt-clr;
+    border-bottom: 1.5px solid $wt-clr;
+}
