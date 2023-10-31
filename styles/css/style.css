@@ -35,18 +35,32 @@ main {
   justify-content: center;
   align-items: center;
   margin: 20px;
+  padding: 10px;
   width: 345px;
   height: 150px;
   border-radius: 15px;
   background-color: #fea501;
+  color: #000000;
+  transition: transform 0.25s;
+  cursor: pointer;
+}
+.cards .card-titly {
+  margin-bottom: 15px;
   font-family: "Montserrat";
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
-  color: #000000;
-  transition: transform 0.25s;
-  cursor: pointer;
+}
+.cards .card-text {
+  font-family: "Helvetica", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.cards .card:target {
+  height: 250px;
 }
 .cards .card:hover {
   transform: scale(1.1);

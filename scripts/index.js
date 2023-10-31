@@ -8,6 +8,7 @@ const modal = document.querySelector('#modal');
 const close = document.querySelector('.modal__card-close');
 const demo = document.querySelector('.demo');
 const cardList = document.querySelector('.cards');
+// const test = document.querySelector('.card');
 
 
 close.onclick = function () {
@@ -26,27 +27,34 @@ function autoComplete () {
     return response.json();
   })
   .then((data) => {
-    const namesList = data.map(item => item.name);
+    // const namesList = data;
+    // const namesList = data.map(item => item.name);
+
     let card = "";
-    for (let i = 0; i <= namesList.length; i++) {
+    for (let i = 0; i <= data.length; i++) {
+const item = new Object(data[i]);
+// const cardName = item['name'];
+// const cardDescription = item['description'];
       card += `<div class="card">
-            <p class="card-titly">${namesList[i]}</p>
-            <p class="card-text none">${namesList[i]}</p>
+      <p class="card-titly">${item['name']}</p>
+      <p class="card-text none">${item['description']}</p>
+
             </div>`
     }
     cardList.innerHTML = card;
-    // const cardsArr = document.querySelectorAll('.card');
-    // console.log(cardsArr)
     
     cardList.onclick = function (event) {
       let div = event.target.closest('div'); 
+      const children = div.lastElementChild;
 
       if (!div) return; 
     
       if (!cardList.contains(div)) return; 
       
-      modal.style.display = 'block';
-      // console.log(div)
+      // modal.style.display = 'block';
+
+      children.classList.toggle('none');
+      div.style.height = "200px";
 
 
     }
