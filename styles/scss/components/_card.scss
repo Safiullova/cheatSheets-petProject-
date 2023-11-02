@@ -4,27 +4,32 @@
   flex-wrap: wrap;
   margin: 0 auto;
   width: 80%;
+}
 
-  .card {
+label {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    margin: 20px;
+    width: 345px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
     display: flex;
-    flex-grow: 0;
-    flex-shrink: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
-    padding: 10px;
-    width: 345px;
-    height: 150px;
-    border-radius: 15px;
+    transform-style: preserve-3d;
+    transition: all 600ms;
+    z-index: 20;
     background-color:  $yel-clr;
     color: $blk-clr;
-  
-    transition: transform 0.25s;
-    cursor: pointer;
-
+    
     &-titly {
-      margin-bottom: 15px;
       font-family: 'Montserrat';
       font-size: 18px;
       font-style: normal;
@@ -33,86 +38,52 @@
     }
 
     &-text {
-      // margin: 0 45px;
+      margin-top: 15px;
       font-family: 'Helvetica', sans-serif;
       font-size: 18px;
       font-style: normal;
       font-weight: 400;
       line-height: 20px
     }
-  }
-
-.card:target {
-  height: 250px;
 }
 
-  // .card:active {
-  //   // transform: scale(1.1);
-  //   background: red;
-  //   height: 345px;
-  // }
-  
-  .card:hover {
-    transform: scale(1.1);
-    background: linear-gradient(95.61deg, $yel-clr 0%, $orbr-clr 100%);
-  }
+    .card div {
+      padding: 15px;
+      backface-visibility: hidden;
+    }
 
-
+.front {
+background-color: $or-clr;
+border-radius: 10px;
+border: 1px solid $orbr-clr;
+margin-top: 10px;
 }
 
-// .active {
-//   // transform: scale(1.1);
-//   background: red;
-//   height: 345px;
-// }
+.back {
+      width: 100%;
+      height: 100%;
+        background: $lite-clr;
+        transform: rotateX(180deg);
+    }
 
-.modal__card {
-
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: calc(50% - 175px);
-  top: calc(50% - 175px);
-  overflow: auto; 
-
-  text-align: center;
-  margin: auto;
-  width: 350px;
-  height: 350px;
-  border-radius: 20px;
-  background: $wt-clr;
-  color: $blk-clr;
-
-  box-shadow: 0px 0px 52px 25px #2C2C2C;
-
-
-  &-titly {
-    margin: 35px auto;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    line-height: 20px; 
-    font-size: 32px;
-    text-decoration-line: underline;
-  }
-
-  &-text {
-    margin: 0 45px;
-    font-family: 'Helvetica', sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px
-  }
-
-  &-close {
-    float: right;
-    border: none;
-    margin: 10px;
-    cursor: pointer;
-    background: none;
-  }
+label:hover .card {
+    transform: rotateX(20deg);
+    box-shadow: 0 20px 20px rgba(255,255,255,.2);
 }
+
+input {
+    display: none;
+}
+
+:checked + .card {
+    transform: rotateX(180deg);
+}
+
+label:hover :checked + .card {
+    transform: rotateX(160deg);
+    box-shadow: 0 20px 20px rgba(255,255,255,.2);
+}
+
 
 .demo {
   display: none;
@@ -121,39 +92,85 @@
   background-color: green;
 }
 
-.none {
-  display: none;
-}
+// .modal__card {
+
+//   display: none;
+//   position: fixed;
+//   z-index: 1;
+//   left: calc(50% - 175px);
+//   top: calc(50% - 175px);
+//   overflow: auto; 
+
+//   text-align: center;
+//   margin: auto;
+//   width: 350px;
+//   height: 350px;
+//   border-radius: 20px;
+//   background: $wt-clr;
+//   color: $blk-clr;
+
+//   box-shadow: 0px 0px 52px 25px #2C2C2C;
+
+
+//   &-titly {
+//     margin: 35px auto;
+//     font-family: 'Montserrat';
+//     font-style: normal;
+//     font-weight: 600;
+//     line-height: 20px; 
+//     font-size: 32px;
+//     text-decoration-line: underline;
+//   }
+
+//   &-text {
+//     margin: 0 45px;
+//     font-family: 'Helvetica', sans-serif;
+//     font-size: 18px;
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: 20px
+//   }
+
+//   &-close {
+//     float: right;
+//     border: none;
+//     margin: 10px;
+//     cursor: pointer;
+//     background: none;
+//   }
+// }
+
+
 
 //классы для цветов карточек
-.clr1 {
-  background-color: $wt-clr;
-}
+// .clr1 {
+//   background-color: $wt-clr;
+// }
 
-.clr2 {
-  background-color: $lite-clr;
-}
+// .clr2 {
+//   background-color: $lite-clr;
+// }
 
-.clr3 {
-  background-color: $yel-clr;
-}
+// .clr3 {
+//   background-color: $yel-clr;
+// }
 
-.clr4 {
-  background-color: $yelbr-clr;
-}
+// .clr4 {
+//   background-color: $yelbr-clr;
+// }
 
-.clr5 {
-  background-color: $or-clr;
-}
+// .clr5 {
+//   background-color: $or-clr;
+// }
 
-.clr6 {
-  background-color: $orbr-clr;
-}
+// .clr6 {
+//   background-color: $orbr-clr;
+// }
 
-.clr7 {
-  background-color: $ltbr-clr;
-}
+// .clr7 {
+//   background-color: $ltbr-clr;
+// }
 
-.clr8 {
-  background-color: $br-clr;
-}
+// .clr8 {
+//   background-color: $br-clr;
+// }
