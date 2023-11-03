@@ -1,3 +1,27 @@
+// для "перехода" с домашней страницы на JS
+
+const homePage = document.querySelector('.home');
+const btnJS = document.querySelector('.home__row1-item4');
+const cardList = document.querySelector('.cards');
+const demo = document.querySelector('.demo');
+const loader = document.querySelector('.loader');
+
+function addClassNone (item)  {
+  item.classList.add("none");
+  };
+  
+  function delClassNone (item)  {
+    item.classList.remove("none");
+    };
+
+btnJS.onclick = function () {
+  addClassNone(homePage);
+  delClassNone(cardList);
+  delClassNone(loader);
+  setTimeout(autoComplete, 3000);
+
+};
+
 // первым блоком script для модального окна и формы отправки
 
 // для строки поиска
@@ -6,9 +30,8 @@
 
 // const modal = document.querySelector('#modal');
 // const close = document.querySelector('.modal__card-close');
-const demo = document.querySelector('.demo');
-const cardList = document.querySelector('.cards');
-// const test = document.querySelector('.card');
+
+
 
 
 // close.onclick = function () {
@@ -20,6 +43,8 @@ const cardList = document.querySelector('.cards');
 //     modal.style.display = 'none';
 //   }
 // };
+
+  
 
 function autoComplete () {
   fetch ("http://localhost:8080/cards")
@@ -53,17 +78,11 @@ const item = new Object(data[i]);
     // cardList.onclick = function (event) {
     //   let div = event.target.closest('div'); 
     //   const children = div.lastElementChild;
-
     //   if (!div) return; 
-    
     //   if (!cardList.contains(div)) return; 
-      
-      // modal.style.display = 'block';
-
+            // modal.style.display = 'block';
       // children.classList.toggle('none');
       // div.style.height = "200px";
-
-
     // }
     
   })
@@ -71,8 +90,10 @@ const item = new Object(data[i]);
     console.error(e);
     demo.style.display = 'flex';
   })
-
-
+  .finally(() => {
+    loader.classList.add("none");
+  });
 };
 
-autoComplete();
+// autoComplete();
+// myFunction ();
