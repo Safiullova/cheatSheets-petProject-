@@ -3,7 +3,6 @@ package ru.itgirls.adventlearning.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.itgirls.adventlearning.dto.CardDto;
-import ru.itgirls.adventlearning.entity.Card;
 import ru.itgirls.adventlearning.service.CardService;
 
 import java.util.List;
@@ -27,8 +26,14 @@ public class CardController {
     }
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
+    @GetMapping("/getcardsbytheme")
+    List<CardDto> getCardsByTheme(@RequestParam("themeId") Long id) {
+        return cardService.getCardByThemeId(id);
+    }
+
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping("/card")
-    CardDto insertCard(@RequestBody CardDto dto){
+    CardDto insertCard(@RequestBody CardDto dto) {
         return cardService.insertCard(dto);
-    };
+    }
 }

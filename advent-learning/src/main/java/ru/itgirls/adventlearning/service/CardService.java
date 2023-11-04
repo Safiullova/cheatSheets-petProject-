@@ -11,4 +11,6 @@ public interface CardService {
 
     CardDto insertCard(CardDto cardDto);
 
+    List<CardDto> getCardByThemeId(Long id);
+
 }
