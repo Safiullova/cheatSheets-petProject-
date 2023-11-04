@@ -4,15 +4,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.itgirls.adventlearning.dto.CardDto;
 import ru.itgirls.adventlearning.entity.Card;
+import ru.itgirls.adventlearning.entity.Theme;
 import ru.itgirls.adventlearning.repository.CardRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class CardServiceImpl implements CardService {
-
     private final CardRepository cardRepository;
 
     @Override
@@ -23,14 +22,11 @@ public class CardServiceImpl implements CardService {
 
     @Override
     public List<CardDto> getCardAll() {
-        List<Card> cardList = cardRepository.findAll();
-
-        List<CardDto> cardDTOList = new ArrayList<>();
-        for (Card card:cardList
-             ) {
-            cardDTOList.add(convertToDto(card));
-        }
-        return cardDTOList;
+        return cardRepository
+                .findCardByThemeId(1L)
+                .stream()
+                .map(this::convertToDto)
+                .toList();
     }
 
     @Override
@@ -38,6 +34,16 @@ public class CardServiceImpl implements CardService {
         Card card = toDomainObject(cardDto);
         Card savedCard = cardRepository.save(card);
         return convertToDto(savedCard);
+    }
+
+    @Override
+    public List<CardDto> getCardByThemeId(Long id) {
+
+        return cardRepository
+                .findCardByThemeId(id)
+                .stream()
+                .map(this::convertToDto)
+                .toList();
     }
 
     private CardDto convertToDto(Card card) {
@@ -49,7 +55,12 @@ public class CardServiceImpl implements CardService {
     }
 
     public static Card toDomainObject(CardDto dto) {
-        return new Card(dto.getId(), dto.getName(), dto.getDescription());
+        return Card
+                .builder()
+                .id(dto.getId())
+                .name(dto.getName())
+                .description(dto.getDescription())
+                .theme(new Theme(1L, "123", null))
+                .build();
     }
-
 }

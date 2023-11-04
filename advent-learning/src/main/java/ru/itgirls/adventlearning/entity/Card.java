@@ -19,6 +19,10 @@ public class Card {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "theme_id")
+    private Theme theme;
 }
