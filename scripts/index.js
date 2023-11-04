@@ -1,7 +1,7 @@
 // для "перехода" с домашней страницы на JS
 
-const homePage = document.querySelector('.home');
-const btnJS = document.querySelector('.home__row1-item4');
+// const homePage = document.querySelector('.home');
+// const btnJS = document.querySelector('.home__row1-item4');
 const cardList = document.querySelector('.cards');
 const demo = document.querySelector('.demo');
 const loader = document.querySelector('.loader');
@@ -14,13 +14,11 @@ function addClassNone (item)  {
     item.classList.remove("none");
     };
 
-btnJS.onclick = function () {
-  addClassNone(homePage);
-  delClassNone(cardList);
-  delClassNone(loader);
+function start () {
   setTimeout(autoComplete, 3000);
-
 };
+
+start ();
 
 // первым блоком script для модального окна и формы отправки
 
@@ -88,7 +86,8 @@ const item = new Object(data[i]);
   })
   .catch ((e) => {
     console.error(e);
-    demo.style.display = 'flex';
+    // demo.style.display = 'flex';
+    delClassNone (demo)
   })
   .finally(() => {
     loader.classList.add("none");
