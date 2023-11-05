@@ -1,5 +1,25 @@
 // первым блоком script для модального окна и формы отправки
 
+// START MODAL WINDOW
+let modalWindow = document.getElementById('myModal');
+let btn = document.getElementById("myBtn");
+let span = document.getElementsByClassName("modal__close")[0];
+
+btn.onclick = function() {
+    modalWindow.style.display = "block";
+}
+
+span.onclick = function() {
+    modalWindow.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modalWindow) {
+        modalWindow.style.display = "none";
+    }
+}
+// END MODAL WINDOW
+
 // для строки поиска
 
 // для отрисовки карточек и их анимации
