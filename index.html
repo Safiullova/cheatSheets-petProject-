@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Шпаргалка по JS</title>
@@ -9,28 +9,31 @@
     <link rel="stylesheet" href="styles/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
 
     <!-- Одностраничный сайт -->
     <div class="modal-window">
 
         <!-- модальное окно с формой ввода для добавления новой карточки -->
-        <a class="show-btn" href="javascript:void(0)" onclick = "document.getElementById('envelope').style.display='block';document.getElementById('fade').style.display='block'">Create new card</a>
-            <div id="envelope" class="envelope">
-                <a class="close-btn" href="javascript:void(0)" onclick = "document.getElementById('envelope').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
-                <h1 class="title">Create new card</h1>
-                <form method="post" action="путь до обработчика">
-                    <input type="text" name="sender" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'Heading':this.value;" value="Heading" class="heading"/>
-                    <textarea class="your-message">Text</textarea>
-                    <input type="submit" name="send" value="CREATE CARD" class="send-message">
-                </form>
-            </div>
-            <div id="fade" class="black-overlay"></div>
+        <a class="show-btn" href="javascript:void(0)"
+            onclick="document.getElementById('envelope').style.display='block';document.getElementById('fade').style.display='block'">Create
+            new card</a>
+        <div id="envelope" class="envelope">
+            <a class="close-btn" href="javascript:void(0)"
+                onclick="document.getElementById('envelope').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+            <h1 class="title">Create new card</h1>
+            <form method="post" action="путь до обработчика">
+                <input type="text" name="sender" onclick="this.value='';" onfocus="this.select()"
+                    onblur="this.value=!this.value?'Heading':this.value;" value="Heading" class="heading" />
+                <textarea class="your-message">Text</textarea>
+                <input type="submit" name="send" value="CREATE CARD" class="send-message">
+            </form>
+        </div>
+        <div id="fade" class="black-overlay"></div>
     </div>
 
     <header class="header">
@@ -44,13 +47,18 @@
                 <p>With our JS cheatSheet</p>
             </div>
             <div class="header__find">
-                <div><input type="text"><input type="submit"></div>
-                <div>
+                <div class="header__find-input">
+                    <input type="text" class="header__find-input-value">
+                    <input type="submit" class="header__find-input-submit">
+                </div>
+                <div class="header__find-text">
                     <p>Find card</p>
                 </div>
             </div>
             <div class="header__create">
-                <div class="create-button"><img src="#" alt="add card"></div>
+                <div class="create-button">
+                    <img src="#" alt="add card">
+                </div>
                 <div class="create-text">
                     <p>Create card</p>
                 </div>
@@ -61,19 +69,19 @@
 
     <main>
         <div class="demo">
-            <h2>У тебя проблемы с подключением к серверу <br/>
+            <h2>У тебя проблемы с подключением к серверу <br />
                 Если настроить, то получится примерно так:</h2>
-                <img src="assets/images/demo.png" alt="demo">
+            <img src="assets/images/demo.png" alt="demo">
         </div>
 
-            <div class="modal__card" id="modal" >
-                <button class="modal__card-close">
-                    <img src="assets/icons/close.svg" alt="close">
-                </button>
-                <p class="modal__card-titly">Заголовок</p>                    
-                <p class="modal__card-text">Так будет выглядеть карточка при клике на нее</p>                    
-            </div>
-        
+        <div class="modal__card" id="modal">
+            <button class="modal__card-close">
+                <img src="assets/icons/close.svg" alt="close">
+            </button>
+            <p class="modal__card-titly">Заголовок</p>
+            <p class="modal__card-text">Так будет выглядеть карточка при клике на нее</p>
+        </div>
+
         <section class="cards">
 
         </section>
@@ -119,4 +127,3 @@
 </body>
 
 </html>
-
