@@ -1,7 +1,15 @@
 @charset "UTF-8";
 @font-face {
-  src: url(/assets/fonts/имяФайлаСоШрифтом);
-  font-family: "Helvetica";
+  font-family: "HelveticaBold";
+  src: url("/assets/fonts/HelveticaBold/HelveticaBold.woff") format("woff");
+}
+@font-face {
+  font-family: "HelveticaMedium";
+  src: url("/assets/fonts/HelveticaMedium/HelveticaMedium.woff") format("woff");
+}
+@font-face {
+  font-family: "HelveticaRegular";
+  src: url("/assets/fonts/HelveticaRegular/HelveticaRegular.woff") format("woff");
 }
 *,
 :after,
@@ -146,8 +154,8 @@ main {
   border-radius: 30px;
   background: #fa9159ab;
   display: none;
-
 }
+
 .modal-window input, .modal-window textarea {
   display: block;
   width: 100%;
@@ -159,6 +167,7 @@ main {
   border-radius: 20px;
   font-family: 'Roboto', sans-serif;
 }
+
 .modal-window input[type="submit"] {
   margin-top: 30px;
   background: #f69a73;
@@ -166,9 +175,11 @@ main {
   color: white;
   font-size: 14px;
 }
+
 .modal-window textarea {
   resize: none;
 }
+
 .modal-window h3 {
   margin-top: 0;
   font-family: 'Roboto', sans-serif;
