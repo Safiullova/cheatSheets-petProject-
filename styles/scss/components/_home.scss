@@ -1,0 +1,182 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    margin: 4%;
+
+.box  {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        color: $blk-clr; 
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px;
+        transition: transform 0.25s;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .box:hover {
+        transform: scale(1.1);
+        border: 6px solid $yel-clr;
+    }
+    &__row1 {
+        display: grid;
+        gap: 45px;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+        "item1 item2 item4 item4 item5 item6 item6"
+        "item3 item3 item4 item4 item7 item8 item8";
+
+
+
+        &-item1 {
+            grid-area: item1;
+            background-color: $lite-clr;
+            height: 150px;
+        }
+        
+        &-item2 {
+            grid-area: item2;
+            background-color: $lite-clr;
+        }
+    
+        &-item3 {
+            grid-area: item3;
+            background-color: $wt-clr;
+        }
+    
+        &-item4 {
+            grid-area: item4;
+            background-color: $yel-clr;
+        }
+
+        &-item5 {
+            grid-area: item5;
+            background-color: $wt-clr;
+            }
+
+        &-item6 {
+            grid-area: item6;
+            background-color: $yelbr-clr;
+        }
+    
+        &-item7 {
+            grid-area: item7;
+            background-color: $wt-clr;
+        }
+    
+        &-item8 {
+            grid-area: item8;
+            background-color: $yelbr-clr;
+        }
+        
+    }
+    &__row2 {
+        display: grid;
+        gap: 45px;
+        margin: 45px 0;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+        "item1 item2 item4 item5 item7 item8 item8"
+        "item3 item3 item4 item5 item9 item10 item11"
+        "item3 item3 item6 item6 item12 item13 item14";
+
+        // div {
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     border-radius: 15px;
+        //     color: $blk-clr; 
+        //     font-family: 'Montserrat';
+        //     font-size: 18px;
+        //     font-style: normal;
+        //     font-weight: 600;
+        //     line-height: 20px;
+        //     transition: transform 0.25s;
+        //     cursor: pointer;
+        // }
+
+        div:hover {
+            transform: scale(1.1);
+            border: 6px solid $yel-clr;
+        }
+
+        &-item1 {
+            grid-area: item1;
+            background-color: $or-clr;
+            height: 150px;
+        }
+        
+        &-item2 {
+            grid-area: item2;
+            background-color: $or-clr;
+        }
+    
+        &-item3 {
+            grid-area: item3;
+            background-color: $ltbr-clr;
+        }
+    
+        &-item4 {
+            grid-area: item4;
+            background-color: $orbr-clr;
+        }
+
+        &-item5 {
+            grid-area: item5;
+            background-color: $orbr-clr;
+            }
+
+        &-item6 {
+            grid-area: item6;
+            background-color: $wt-clr;
+        }
+    
+        &-item7 {
+            grid-area: item7;
+            background-color: $lite-clr;
+        }
+    
+        &-item8 {
+            grid-area: item8;
+            background-color: $wt-clr;
+        }
+        &-item9 {
+            grid-area: item9;
+            background-color: $lite-clr;
+        }
+    
+        &-item10 {
+            grid-area: item10;
+            background-color: $br-clr;
+        }
+
+        &-item11 {
+            grid-area: item11;
+            background-color: $br-clr;
+            }
+
+        &-item12 {
+            grid-area: item12;
+            background-color: $lite-clr;
+        }
+    
+        &-item13 {
+            grid-area: item13;
+            background-color: $br-clr;
+        }
+    
+        &-item14 {
+            grid-area: item14;
+            background-color: $br-clr;
+        }
+        
+    }
+}
+

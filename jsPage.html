@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Шпаргалка по JS</title>
@@ -9,27 +9,28 @@
     <link rel="stylesheet" href="styles/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
-        rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 </head>
-
 <body>
 
-    <!-- Одностраничный сайт -->
+<!-- Одностраничный сайт -->
 
-        <!-- Start Modal window с формой ввода для добавления новой карточки -->
-        <div class="modal-window" id="myModal">
-            <div class="modal-window__main">
+<!-- Start Modal window с формой ввода для добавления новой карточки -->
+    <div class="modal-window" id="myModal">
+        <div class="modal-window__main">
                 <h2 class="modal-window__title">Create new card</h2>
-                    <div class="modal-window__container">
-                        <input type="text" value="Heading" class="heading"  autofocus maxlength="100"/><br>
-                        <textarea placeholder="Text..." rows="3" autofocus maxlength="1000"></textarea><br>
-                        <input type="submit" value="CREATE CARD"/>
-                    </div>
-                <div class="modal__close"></div>
-            </div>
+                <div class="modal-window__container">
+                    <input type="text" value="Heading" class="heading"  autofocus maxlength="100"/><br>
+                    <textarea placeholder="Text..." rows="3" autofocus maxlength="1000"></textarea><br>
+                    <input type="submit" value="CREATE CARD"/>
+                </div>
+            <div class="modal__close"></div>
         </div>
-        <!-- End Modal window-->
+    </div>
+<!-- End Modal window-->
 
     <header class="header">
         <div class="header-stroke">
@@ -50,7 +51,7 @@
                 </div>
             </div>
             <div class="header__create">
-                <div class="create-button"  id="myBtn">
+                <div class="create-button" id="myBtn">
                     <img src="./assets/icons/cross.svg" alt="add card">
                 </div>
                 <div class="create-text">
@@ -61,48 +62,26 @@
     </header>
 
     <main>
-        <div class="loader none">
+        <div class="loader">
             <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
                 <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
             </svg>
         </div>
+
+        <section class="cards"></section>
+
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="arrow-up-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
+            </symbol>
+        </svg>
         
-        <div class="demo none">
-            <h2>У тебя проблемы с подключением к серверу <br/>
-                Если настроить, то получится примерно так:</h2>
-            <img src="assets/images/demo.png" alt="demo">
+        <div class="btn-up btn-up_hide">
+            <svg class="btn-up-icon" role="img" aria-label="Прокрутить страницу к началу">
+                <use xlink:href="#arrow-up-short"></use>
+            </svg>
         </div>
 
-        <section class="home">
-            <div class="home__row1">
-                <a class="home__row1-item1 box" href="#">HTML</a>
-                <a class="home__row1-item2 box" href="#">CSS</a>
-                <a class="home__row1-item3 box" href="#">JAVA</a>
-                <a class="home__row1-item4 box" href="jsPage.html">Java Script</a>
-                
-                <a class="home__row1-item5 box" href="#">React</a>
-                <a class="home__row1-item6 box" href="#">Type Script</a>
-                <a class="home__row1-item7 box" href="#">Redux</a>
-                <a class="home__row1-item8 box" href="#">MobX</a>
-            </div>
-            <div class="home__row2">
-                <a class="home__row2-item1 box" href="#">#</ф>
-                <a class="home__row2-item2 box" href="#">#</a>
-                <a class="home__row2-item3 box" href="#">#</a>
-                <a class="home__row2-item4 box" href="#">#</a>
-                <a class="home__row2-item5 box" href="#">#</a>
-                <a class="home__row2-item6 box" href="#">#</a>
-                <a class="home__row2-item7 box" href="#">#</a>
-                <a class="home__row2-item8 box" href="#">#</a>
-                <a class="home__row2-item9 box" href="#">#</a>
-                <a class="home__row2-item10 box" href="#">#</a>
-                <a class="home__row2-item11 box" href="#">#</a>
-                <a class="home__row2-item12 box" href="#">#</a>
-                <a class="home__row2-item13 box" href="#">#</a>
-                <a class="home__row2-item14 box" href="#">#</a>
-            </div>
-            <div class="home__row3"></div>
-        </section>
     </main>
 
     <footer class="footer">
@@ -144,3 +123,4 @@
 </body>
 
 </html>
+
