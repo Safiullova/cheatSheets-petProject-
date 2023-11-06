@@ -5,7 +5,17 @@
 // }
 
 @font-face {
-    src: url(/assets/fonts/имяФайлаСоШрифтом);
-    font-family: "Helvetica";
-  }
-  
+  font-family: "HelveticaBold";
+  src: url("/assets/fonts/HelveticaBold/HelveticaBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HelveticaMedium";
+  src: url("/assets/fonts/HelveticaMedium/HelveticaMedium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HelveticaRegular";
+  src: url("/assets/fonts/HelveticaRegular/HelveticaRegular.woff")
+    format("woff");
+}
