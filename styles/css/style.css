@@ -1,7 +1,14 @@
-@charset "UTF-8";
 @font-face {
-  src: url(/assets/fonts/имяФайлаСоШрифтом);
-  font-family: "Helvetica";
+  font-family: "HelveticaBold";
+  src: url("/assets/fonts/HelveticaBold/HelveticaBold.woff") format("woff");
+}
+@font-face {
+  font-family: "HelveticaMedium";
+  src: url("/assets/fonts/HelveticaMedium/HelveticaMedium.woff") format("woff");
+}
+@font-face {
+  font-family: "HelveticaRegular";
+  src: url("/assets/fonts/HelveticaRegular/HelveticaRegular.woff") format("woff");
 }
 *,
 :after,
@@ -306,94 +313,78 @@ label:hover :checked + .card {
 
 .modal-window {
   padding: 50px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  position: relative;
+  max-width: 400px;
+  margin: 50px auto 0;
+  background: white;
+  border-radius: 30px;
+  background: rgba(250, 145, 89, 0.6705882353);
+  display: none;
 }
 
-.envelope {
-  width: 58.125rem;
-  height: 9.9375rem;
-  flex-shrink: 0;
-  border-radius: 1.25rem;
-  background: #FFF;
-  box-shadow: 0px 0px 52px 25px #2C2C2C;
-  margin-top: 0 0 0 100;
+.modal-window input, .modal-window textarea {
+  display: block;
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  background: #f5faff;
+  line-height: 40px;
+  border-width: 0;
+  border-radius: 20px;
+  font-family: "Roboto", sans-serif;
 }
 
-/* формируем кнопку закрытия,
-** размеры, положение на форме  */
-.close-btn {
-  width: 10.9375rem;
-  height: 2.5rem;
-  flex-shrink: 0;
-  border-radius: 0.625rem;
-  border: 2px solid #000;
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.25);
+.modal-window input[type=submit] {
+  margin-top: 30px;
+  background: #f69a73;
+  border-bottom: 4px solid #d87d56;
+  color: white;
+  font-size: 14px;
 }
 
-/* оформляем заголовок формы */
-.title {
-  width: 18.75rem;
-  color: #000;
-  font-family: Montserrat;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.25rem;
+.modal-window textarea {
+  resize: none;
 }
 
-/* стили для полей ввода */
-input[type=text] {
-  font-family: Montserrat;
-  font-size: 13px;
-  background-color: rgb(255, 255, 255);
-  color: #787474;
-  padding-left: 10px;
-  width: 208px;
-  height: 33px;
-  border-color: rgb(182, 182, 182);
-  border-width: 1px;
-  border-style: solid;
-  -moz-box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.5), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.5), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.5), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
-  -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #80ffffff,Positive = true)";
-  filter: progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #80ffffff,Positive = true);
-  border-radius: 3px;
-  -moz-border-radius: 3px;
+.modal-window h3 {
+  margin-top: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #707981;
 }
 
-.your-message {
-  width: 50%;
-  height: 2.5rem;
-  display: inline-block;
-  border-radius: 0.625rem;
-  border: 2px solid #000;
-  background: rgba(255, 255, 255, 0);
-  margin: 50px 0;
-}
-
-.heading {
+.modal__close {
   position: absolute;
-  top: 100px;
-  left: 40px;
+  top: 30px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.2;
+  cursor: pointer;
+  transition: opacity ease 0.5s;
+}
+.modal__close:hover {
+  opacity: 1;
 }
 
-/* оформляем кнопку отправки */
-.send-message {
-  background-color: #929FAB;
-  width: 10.9375rem;
-  height: 2.5rem;
-  flex-shrink: 0;
-  border-radius: 0.625rem;
-  border: 2px solid #000;
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.25);
+.modal__close::before,
+.modal__close::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #000;
+}
+
+.modal__close::before {
+  transform: rotate(45deg);
+}
+
+.modal__close::after {
+  transform: rotate(-45deg);
 }
 
 .btn-up {
@@ -433,6 +424,107 @@ input[type=text] {
   .btn-up:hover {
     background-color: #f88b50;
   }
+}
+.header {
+  width: 100%;
+  display: flex;
+  margin: 1rem auto;
+}
+.header .header-stroke {
+  width: 100%;
+  display: flex;
+  margin: 1.88rem auto;
+}
+.header .header-stroke .header__logo {
+  width: 2rem;
+  display: flex;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 0.94rem;
+}
+.header .header-stroke .header__logo img {
+  width: 100%;
+  padding: 0.44rem;
+}
+.header .header-stroke .header__info {
+  width: 29rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.88rem;
+  row-gap: 1.62rem;
+}
+.header .header-stroke .header__info h3 {
+  color: #ffffff;
+  font-family: Montserrat;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+.header .header-stroke .header__info p {
+  color: #ffffff;
+  font-family: Montserrat;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+.header .header-stroke .header__find {
+  width: 12.375rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 18rem;
+  row-gap: 0.56rem;
+}
+.header .header-stroke .header__find .header__find-input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.header .header-stroke .header__find .header__find-input .header__find-input-value {
+  width: 9.375rem;
+  display: flex;
+  padding: 0.1rem;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 0.63rem;
+}
+.header .header-stroke .header__find .header__find-input .header__find-input-submit {
+  width: 2.5rem;
+  display: flex;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 0.625rem;
+}
+.header .header-stroke .header__find .header__find-text p {
+  margin-left: 1.69rem;
+  color: #ffffff;
+  font-family: Montserrat;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+.header .header-stroke .header__create {
+  width: 10.375rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.56rem;
+}
+.header .header-stroke .header__create .create-button {
+  width: 2.5rem;
+  display: flex;
+}
+.header .header-stroke .header__create .create-button img {
+  width: 100%;
+}
+.header .header-stroke .header__create .create-button p {
+  color: #ffffff;
+  font-family: Montserrat;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem;
 }
 
 /*# sourceMappingURL=style.css.map */
