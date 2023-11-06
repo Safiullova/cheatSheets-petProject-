@@ -16,25 +16,20 @@
 <body>
 
     <!-- Одностраничный сайт -->
-    <div class="modal-window">
 
-        <!-- модальное окно с формой ввода для добавления новой карточки -->
-        <a class="show-btn" href="javascript:void(0)"
-            onclick="document.getElementById('envelope').style.display='block';document.getElementById('fade').style.display='block'">Create
-            new card</a>
-        <div id="envelope" class="envelope">
-            <a class="close-btn" href="javascript:void(0)"
-                onclick="document.getElementById('envelope').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
-            <h1 class="title">Create new card</h1>
-            <form method="post" action="путь до обработчика">
-                <input type="text" name="sender" onclick="this.value='';" onfocus="this.select()"
-                    onblur="this.value=!this.value?'Heading':this.value;" value="Heading" class="heading" />
-                <textarea class="your-message">Text</textarea>
-                <input type="submit" name="send" value="CREATE CARD" class="send-message">
-            </form>
+        <!-- Start Modal window с формой ввода для добавления новой карточки -->
+        <div class="modal-window" id="myModal">
+            <div class="modal-window__main">
+                <h2 class="modal-window__title">Create new card</h2>
+                    <div class="modal-window__container">
+                        <input type="text" value="Heading" class="heading"  autofocus maxlength="100"/><br>
+                        <textarea placeholder="Text..." rows="3" autofocus maxlength="1000"></textarea><br>
+                        <input type="submit" value="CREATE CARD"/>
+                    </div>
+                <div class="modal__close"></div>
+            </div>
         </div>
-        <div id="fade" class="black-overlay"></div>
-    </div>
+        <!-- End Modal window-->
 
     <header class="header">
 
@@ -64,7 +59,7 @@
                 </div>
             </div>
         </div>
-
+ <button class="create__button" id="myBtn"><img src="#" alt="add card"></button><!--Сделала для демонстрации модального окна 06.11 tatinka-->
     </header>
 
     <main>
