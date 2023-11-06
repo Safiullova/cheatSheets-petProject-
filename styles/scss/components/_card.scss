@@ -96,55 +96,6 @@ label:hover :checked + .card {
   display: none;
 }
 
-// .modal__card {
-
-//   display: none;
-//   position: fixed;
-//   z-index: 1;
-//   left: calc(50% - 175px);
-//   top: calc(50% - 175px);
-//   overflow: auto; 
-
-//   text-align: center;
-//   margin: auto;
-//   width: 350px;
-//   height: 350px;
-//   border-radius: 20px;
-//   background: $wt-clr;
-//   color: $blk-clr;
-
-//   box-shadow: 0px 0px 52px 25px #2C2C2C;
-
-
-//   &-titly {
-//     margin: 35px auto;
-//     font-family: 'Montserrat';
-//     font-style: normal;
-//     font-weight: 600;
-//     line-height: 20px; 
-//     font-size: 32px;
-//     text-decoration-line: underline;
-//   }
-
-//   &-text {
-//     margin: 0 45px;
-//     font-family: 'Helvetica', sans-serif;
-//     font-size: 18px;
-//     font-style: normal;
-//     font-weight: 400;
-//     line-height: 20px
-//   }
-
-//   &-close {
-//     float: right;
-//     border: none;
-//     margin: 10px;
-//     cursor: pointer;
-//     background: none;
-//   }
-// }
-
-
 
 //классы для цветов карточек
 // .clr1 {

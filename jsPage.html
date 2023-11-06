@@ -13,50 +13,52 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
-  </head>
-  <body>
+</head>
+<body>
 
-    <!-- Одностраничный сайт -->
-    <div class="modal-window">
+<!-- Одностраничный сайт -->
 
-        <!-- модальное окно с формой ввода для добавления новой карточки -->
-        <a class="show-btn" href="javascript:void(0)" onclick = "document.getElementById('envelope').style.display='block';document.getElementById('fade').style.display='block'">Create new card</a>
-            <div id="envelope" class="envelope">
-                <a class="close-btn" href="javascript:void(0)" onclick = "document.getElementById('envelope').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
-                <h1 class="title">Create new card</h1>
-                <form method="post" action="путь до обработчика">
-                    <input type="text" name="sender" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'Heading':this.value;" value="Heading" class="heading"/>
-                    <textarea class="your-message">Text</textarea>
-                    <input type="submit" name="send" value="CREATE CARD" class="send-message">
-                </form>
-            </div>
-            <div id="fade" class="black-overlay"></div>
+<!-- Start Modal window с формой ввода для добавления новой карточки -->
+    <div class="modal-window" id="myModal">
+        <div class="modal-window__main">
+                <h2 class="modal-window__title">Create new card</h2>
+                <div class="modal-window__container">
+                    <input type="text" value="Heading" class="heading"  autofocus maxlength="100"/><br>
+                    <textarea placeholder="Text..." rows="3" autofocus maxlength="1000"></textarea><br>
+                    <input type="submit" value="CREATE CARD"/>
+                </div>
+            <div class="modal__close"></div>
+        </div>
     </div>
+<!-- End Modal window-->
 
     <header class="header">
-
         <div class="header-stroke">
             <div class="header__logo">
                 <img src="./assets/images/logo_CmndFe.svg" alt="logo">
             </div>
             <div class="header__info">
-                <p>Learn to JAVA SCRIPT</p>
+                <h3>Learn to JAVA SCRIPT</h3>
                 <p>With our JS cheatSheet</p>
             </div>
             <div class="header__find">
-                <div><input type="text"><input type="submit"></div>
-                <div>
+                <div class="header__find-input">
+                    <input type="text" class="header__find-input-value">
+                    <input type="submit" class="header__find-input-submit" value="GO">
+                </div>
+                <div class="header__find-text">
                     <p>Find card</p>
                 </div>
             </div>
             <div class="header__create">
-                <div class="create-button"><img src="#" alt="add card"></div>
+                <div class="create-button" id="myBtn">
+                    <img src="./assets/icons/cross.svg" alt="add card">
+                </div>
                 <div class="create-text">
                     <p>Create card</p>
                 </div>
             </div>
         </div>
-
     </header>
 
     <main>
@@ -67,6 +69,7 @@
         </div>
 
         <section class="cards"></section>
+
         <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
             <symbol id="arrow-up-short" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
@@ -78,6 +81,7 @@
                 <use xlink:href="#arrow-up-short"></use>
             </svg>
         </div>
+
     </main>
 
     <footer class="footer">
