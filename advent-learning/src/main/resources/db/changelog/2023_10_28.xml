@@ -55,11 +55,17 @@
             insert into card(theme_id, name, description) values (1, 'Math.random()', 'возвращает случайное число от 0 до 1.');
 
             insert into card(theme_id, name, description) values (2, '@Entity', 'Используется для того, чтобы пометить класс, как класс, который должен быть связан с таблицей в базе данных.');
-            insert into card(theme_id, name, description) values (2, '@Id', 'Помечает поле как идентификатор');
-            insert into card(theme_id, name, description) values (2, '@GeneratedValue', 'Описывает тип генерации поля');
-            insert into card(theme_id, name, description) values (2, '@Column', 'Используется для указания, что поле класса должно быть связано с определенным столбцом в таблице базы данных');
-            insert into card(theme_id, name, description) values (2, '@ManyToMany', 'Используется для создания связи Многие ко многим');
-            insert into card(theme_id, name, description) values (2, '@ManyToOne', 'Аннотации для создании связи Один ко многим');
+            insert into card(theme_id, name, description) values (2, '@Id', 'Помечает поле как идентификатор.');
+            insert into card(theme_id, name, description) values (2, '@GeneratedValue', 'Описывает тип генерации поля.');
+            insert into card(theme_id, name, description) values (2, '@Column', 'Используется для указания, что поле класса должно быть связано с определенным столбцом в таблице базы данных.');
+            insert into card(theme_id, name, description) values (2, '@ManyToMany', 'Используется для создания связи Многие ко многим.');
+            insert into card(theme_id, name, description) values (2, '@ManyToOne', 'Аннотации для создании связи Один ко многим.');
+
+            insert into card(theme_id, name, description) values (2, '@RestController', 'это аннотация в Spring, которая позволяет создавать RESTful веб-сервисы.');
+            insert into card(theme_id, name, description) values (2, '@RequestBody', 'аннотация в Spring Framework для обозначения параметра метода контроллера, который должен быть прочитан из тела HTTP-запроса.');
+            insert into card(theme_id, name, description) values (2, '@RequestMapping', 'общая аннотация для определения методов-обработчиков веб-запросов');
+            insert into card(theme_id, name, description) values (2, '@PathVariable', 'аннотация для передачи данных в пути URL.');
+            insert into card(theme_id, name, description) values (2, '@RequestParam', 'аннотация для передачи параметров запроса.');
         </sql>
     </changeSet>
 </databaseChangeLog>
