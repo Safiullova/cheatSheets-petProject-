@@ -1,11 +1,11 @@
 
 // START MODAL WINDOW
-let modalWindowTheme = document.getElementById('myModal');
-let btnAddTheme = document.getElementById("myBtn");
-let btnClose = document.getElementsByClassName("modal__close")[0];
+const modalWindowTheme = document.getElementById('myModal');
+const btnAddTheme = document.getElementById("myBtn");
+const btnClose = document.getElementsByClassName("modal__close")[0];
 
-const bntPOST = document.getElementById('submitTheme');
-let nameTheme = document.querySelector('#nameTheme');
+const bntPOSTTheme = document.getElementById('submitTheme');
+
 
 btnAddTheme.onclick = function() {
     modalWindowTheme.style.display = "block";
@@ -15,17 +15,17 @@ btnClose.onclick = function() {
     modalWindowTheme.style.display = "none";
 }
 
-bntPOST.onclick = function (e) {
+// Функция для новой темы
+
+bntPOSTTheme.onclick = function (e) {
   e.preventDefault();
 
-  let newTheme = {
-    // id: '123',
-    name: `${nameTheme.value}`,
+  const nameTheme = document.querySelector('#nameTheme').value;
+
+  const newTheme = {
+    name: `${nameTheme}`,
   };
-  // let d = toString(newCard);
   console.log(newTheme);
-  // console.log(newCard.name);
-  // console.log(newCard.discriptional);
 
   fetch("http://localhost:8080/theme",
       {
@@ -38,17 +38,17 @@ bntPOST.onclick = function (e) {
           console.log(theme);
       })
       .catch(error => console.log(error));
-}
 
+  getTheme () //Обновление списка тем
+}
 
 // END MODAL WINDOW
 
 // для строки поиска
 
-// для тем 
+// для списка всех тем 
 
 const themeList = document.querySelectorAll('.box');
-
 
 function getTheme () {
   fetch ("http://localhost:8080/themes")
@@ -67,7 +67,8 @@ function getTheme () {
   
   .catch ((e) => {
     console.error(e);
-    // alert('Возникла ошибка при подключении к серверу!')
+    demo.classList.remove("none");
+
   })
 
   .finally(() => {
@@ -75,12 +76,11 @@ function getTheme () {
   });
   }
 
-
   getTheme ();
 
 
 
-const btnUp = {
+const btnUp = { // Кнопка прокрутки вверх
   el: document.querySelector('.btn-up'),
   scrolling: false,
   show() {

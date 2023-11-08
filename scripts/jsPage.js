@@ -66,14 +66,13 @@ function getCards () { // функция получения всех карто�
   })
 
   .then((data) => {
-    // const namesList = data.map(item => item.name);
 
     let card = "";
 
     for (let i = 0; i < data.length; i++) {
 
       const item = new Object(data[i]);
-      card += ` <label>
+      card += ` <label id=${item['id']}>
         <input type="checkbox"  />
         <div class="card">
           <div class="front">
@@ -89,6 +88,7 @@ function getCards () { // функция получения всех карто�
     };
 
     cardList.innerHTML = card;
+
   })
 
   .catch ((e) => {
@@ -101,16 +101,33 @@ function getCards () { // функция получения всех карто�
   });
 };
 
-cardList.onclick = function (e) { //функция удаления карточки
-  if (e.target.className === 'delCard')
-  alert('Удалить карточку?');
+cardList.onclick = function (e) { //отлов клика id для удаления карточки
+  if (e.target.className === 'delCard') {
 
+  id = `${e.target.parentElement.parentElement.id}`;
+  if (confirm('Удалить карточку?') == true) {
+    deleteCard (id); //функция удаления карточки
+  } else {
+    return
+  }
+
+  setTimeout(() => {
+    getCards();
+  }, 500); //Обновление всех карточек
+
+  }
   return
+};
 
-// console.log()
-// console.log()
+function deleteCard (id) { //функция удаления карточки
 
-}
+  fetch("http://localhost:8080/cards/" + id,
+  {
+      method: 'DELETE',
+  })
+
+  .catch(error => console.log(error));
+};
 
 
 const btnUp = {
