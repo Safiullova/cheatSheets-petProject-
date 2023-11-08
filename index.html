@@ -18,18 +18,17 @@
     <!-- Одностраничный сайт -->
 
         <!-- Start Modal window с формой ввода для добавления новой карточки -->
-        <div class="modal-window" id="myModal">
-            <div class="modal-window__main">
-                <h2 class="modal-window__title">Create new card</h2>
-                    <div class="modal-window__container">
-                        <input type="text" value="Heading" class="heading"  autofocus maxlength="100"/><br>
-                        <textarea placeholder="Text..." rows="3" autofocus maxlength="1000"></textarea><br>
-                        <input type="submit" value="CREATE CARD"/>
-                    </div>
-                <div class="modal__close"></div>
-            </div>
+    <div class="modal-window" id="myModal">
+        <div class="modal-window__main">
+                <h2 class="modal-window__title">Create new Theme</h2>
+                <div class="modal-window__container">
+                    <input type="text" id="nameTheme" placeholder="Heading" class="heading"  autofocus maxlength="100"/><br>
+                    <input type="submit" id="submitTheme" value="CREATE CARD"/>
+                </div>
+            <div class="modal__close"></div>
         </div>
-        <!-- End Modal window-->
+    </div>
+<!-- End Modal window-->
 
     <header class="header">
         <div class="header-stroke">
@@ -75,10 +74,10 @@
 
         <section class="home">
             <div class="home__row1">
-                <a class="home__row1-item1 box" href="#">HTML</a>
-                <a class="home__row1-item2 box" href="#">CSS</a>
-                <a class="home__row1-item3 box" href="#">JAVA</a>
-                <a class="home__row1-item4 box" href="jsPage.html">Java Script</a>
+                <a class="home__row1-item1 box" href="jsPage.html"></a>
+                <a class="home__row1-item2 box" href="springPage.html"></a>
+                <a class="home__row1-item3 box" href="#">HTML</a>
+                <a class="home__row1-item4 box" href="#">CSS</a>
                 
                 <a class="home__row1-item5 box" href="#">React</a>
                 <a class="home__row1-item6 box" href="#">Type Script</a>
@@ -86,7 +85,7 @@
                 <a class="home__row1-item8 box" href="#">MobX</a>
             </div>
             <div class="home__row2">
-                <a class="home__row2-item1 box" href="#">#</ф>
+                <a class="home__row2-item1 box" href="#">#</a>
                 <a class="home__row2-item2 box" href="#">#</a>
                 <a class="home__row2-item3 box" href="#">#</a>
                 <a class="home__row2-item4 box" href="#">#</a>
@@ -103,6 +102,19 @@
             </div>
             <div class="home__row3"></div>
         </section>
+
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="arrow-up-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
+            </symbol>
+        </svg>
+        
+        <div class="btn-up btn-up_hide">
+            <svg class="btn-up-icon" role="img" aria-label="Прокрутить страницу к началу">
+                <use xlink:href="#arrow-up-short"></use>
+            </svg>
+        </div>
+        
     </main>
 
     <footer class="footer">

@@ -1,41 +1,41 @@
+// первым блоком script для модального окна и формы отправки
 
 // START MODAL WINDOW
-let modalWindowTheme = document.getElementById('myModal');
-let btnAddTheme = document.getElementById("myBtn");
+let modalWindowCard = document.getElementById('myModal');
+let btnAddCard = document.getElementById("myBtn");
 let btnClose = document.getElementsByClassName("modal__close")[0];
 
-const bntPOST = document.getElementById('submitTheme');
-let nameTheme = document.querySelector('#nameTheme');
+const bntPOSTCard = document.getElementById('submitCard');
+let nameCard = document.querySelector('#nameCard');
+let textCard = document.getElementById('textCard');
 
-btnAddTheme.onclick = function() {
-    modalWindowTheme.style.display = "block";
+btnAddCard.onclick = function() {
+    modalWindowCard.style.display = "block";
 }
 
 btnClose.onclick = function() {
-    modalWindowTheme.style.display = "none";
+    modalWindowCard.style.display = "none";
 }
 
-bntPOST.onclick = function (e) {
+
+bntPOSTCard.onclick = function (e) {
   e.preventDefault();
 
-  let newTheme = {
-    // id: '123',
-    name: `${nameTheme.value}`,
+  let newCard = {
+    name: `${nameCard.value}`,
+    discriptional: `${textCard.value}`
   };
-  // let d = toString(newCard);
-  console.log(newTheme);
-  // console.log(newCard.name);
-  // console.log(newCard.discriptional);
+  console.log(newCard);
 
-  fetch("http://localhost:8080/theme",
+  fetch("http://localhost:8080/card",
       {
           method: 'POST',
           headers: { "Content-Type": "application/json;charset=utf-8" },
-          body: JSON.stringify(newTheme),
+          body: JSON.stringify(newCard),
       })
       .then(response => response.json())
-      .then(theme => {
-          console.log(theme);
+      .then(card => {
+          console.log(card);
       })
       .catch(error => console.log(error));
 }
@@ -45,39 +45,59 @@ bntPOST.onclick = function (e) {
 
 // для строки поиска
 
-// для тем 
 
-const themeList = document.querySelectorAll('.box');
+// для отрисовки карточек и их анимации
 
+const cardList = document.querySelector('.cards');
+const demo = document.querySelector('.demo');
+const loader = document.querySelector('.loader');
 
-function getTheme () {
-  fetch ("http://localhost:8080/themes")
+window.setTimeout(() => {
+  autoComplete();
+
+}, 3000);
+
+function autoComplete () {
+  fetch ("http://localhost:8080/getcardsbytheme?themeId=1")
 
   .then((response) => {
     return response.json();
   })
 
   .then((data) => {
-    
+    // const namesList = data.map(item => item.name);
+
+    let card = "";
+
     for (let i = 0; i < data.length; i++) {
+
       const item = new Object(data[i]);
-    themeList[i].innerHTML = item['name'];
-    }
+      card += ` <label>
+        <input type="checkbox"  />
+        <div class="card">
+          <div class="front">
+            <p class="card-titly">${item['name']}</p>
+          </div>
+          <div class="back">
+            <p class="card-titly">${item['name']}</p>
+            <p class="card-text">${item['description']}</p>
+          </div>
+        </div>
+      </label>`
+    };
+
+    cardList.innerHTML = card;
   })
-  
+
   .catch ((e) => {
     console.error(e);
-    // alert('Возникла ошибка при подключении к серверу!')
+    demo.classList.remove("none");
   })
 
   .finally(() => {
-    // loader.classList.add("none");
+    loader.classList.add("none");
   });
-  }
-
-
-  getTheme ();
-
+};
 
 
 const btnUp = {
