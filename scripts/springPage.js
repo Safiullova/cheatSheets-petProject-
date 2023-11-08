@@ -1,13 +1,10 @@
-// первым блоком script для модального окна и формы отправки
 
 // START MODAL WINDOW
-let modalWindowCard = document.getElementById('myModal');
-let btnAddCard = document.getElementById("myBtn");
-let btnClose = document.getElementsByClassName("modal__close")[0];
+const modalWindowCard = document.getElementById('myModal');
+const btnAddCard = document.getElementById("myBtn");
+const btnClose = document.getElementsByClassName("modal__close")[0];
 
 const bntPOSTCard = document.getElementById('submitCard');
-let nameCard = document.querySelector('#nameCard');
-let textCard = document.getElementById('textCard');
 
 btnAddCard.onclick = function() {
     modalWindowCard.style.display = "block";
@@ -17,17 +14,21 @@ btnClose.onclick = function() {
     modalWindowCard.style.display = "none";
 }
 
+// Функция для добавления карточки
 
 bntPOSTCard.onclick = function (e) {
   e.preventDefault();
 
-  let newCard = {
-    name: `${nameCard.value}`,
-    discriptional: `${textCard.value}`
-  };
+  const nameCard = document.querySelector('#nameCard').value;
+  const textCard = document.getElementById('textCard').value;
+
+  const newCard = {
+    name: `${nameCard}`,
+    description: `${textCard}`
+ }
   console.log(newCard);
 
-  fetch("http://localhost:8080/card",
+  fetch("http://localhost:8080/cards?themeId=2",
       {
           method: 'POST',
           headers: { "Content-Type": "application/json;charset=utf-8" },
@@ -38,6 +39,8 @@ bntPOSTCard.onclick = function (e) {
           console.log(card);
       })
       .catch(error => console.log(error));
+
+      getCards() //Обновление всех карточек
 }
 
 
@@ -53,11 +56,10 @@ const demo = document.querySelector('.demo');
 const loader = document.querySelector('.loader');
 
 window.setTimeout(() => {
-  autoComplete();
+  getCards();
+}, 3000); // Задержка 3 секунды, крутится лоадер
 
-}, 3000);
-
-function autoComplete () {
+function getCards() {  // функция получения всех карточек по теме
   fetch ("http://localhost:8080/getcardsbytheme?themeId=2")
 
   .then((response) => {
@@ -65,6 +67,7 @@ function autoComplete () {
   })
 
   .then((data) => {
+
 
     let card = "";
 
@@ -81,6 +84,7 @@ function autoComplete () {
             <p class="card-titly">${item['name']}</p>
             <p class="card-text">${item['description']}</p>
           </div>
+          <div class="delCard" name='del'></div>
         </div>
       </label>`
     };
@@ -97,6 +101,18 @@ function autoComplete () {
     loader.classList.add("none");
   });
 };
+
+cardList.onclick = function (e) {  //функция удаления карточки
+  if (e.target.className === 'delCard')
+  alert('Удалить карточку?');
+
+  return
+
+// console.log()
+// console.log()
+
+}
+
 
 
 const btnUp = {

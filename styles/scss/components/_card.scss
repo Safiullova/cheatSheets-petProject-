@@ -85,6 +85,38 @@ label:hover :checked + .card {
 }
 
 
+.delCard {
+	position: absolute;
+	top: 30px;
+	right: 20px;
+	width: 24px;
+	height: 24px;
+	opacity: 0.2;
+	cursor: pointer;;
+    transition: opacity ease 0.5s;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+.delCard::before,
+.delCard::after {
+	content: '';
+	position: absolute;
+	top: 10px;
+	display: block;
+	width: 24px;
+	height: 3px;
+	background: #000;
+}
+.delCard::before {
+	transform: rotate(45deg);
+}
+
+.delCard::after {
+	transform: rotate(-45deg);
+}
+
 .demo {
   display: none;
   flex-direction: column;

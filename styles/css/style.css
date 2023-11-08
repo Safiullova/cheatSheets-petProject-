@@ -300,6 +300,39 @@ label:hover :checked + .card {
   box-shadow: 0 20px 20px rgba(255, 255, 255, 0.2);
 }
 
+.delCard {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.2;
+  cursor: pointer;
+  transition: opacity ease 0.5s;
+}
+.delCard:hover {
+  opacity: 1;
+}
+
+.delCard::before,
+.delCard::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #000;
+}
+
+.delCard::before {
+  transform: rotate(45deg);
+}
+
+.delCard::after {
+  transform: rotate(-45deg);
+}
+
 .demo {
   display: none;
   flex-direction: column;
@@ -525,4 +558,6 @@ label:hover :checked + .card {
   font-style: normal;
   font-weight: 500;
   line-height: 1.25rem;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
