@@ -22,6 +22,11 @@ public class ThemeServiceImpl implements ThemeService {
                 .toList();
     }
 
+    @Override
+    public Theme getThemeByID(Long id) {
+        return repository.findById(id).orElseThrow();
+    }
+
     private ThemeDto convertToDto(Theme theme) {
         return ThemeDto.builder()
                 .id(theme.getId())
