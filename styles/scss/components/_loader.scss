@@ -1,14 +1,8 @@
-// This is just to center the spinner
-
-// html, body { height: 100%; }
-
 .loader {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-// Here is where the magic happens
 
 $offset: 187;
 $duration: 1.4s;

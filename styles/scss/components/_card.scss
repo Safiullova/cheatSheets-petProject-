@@ -71,7 +71,7 @@ label:hover .card {
     box-shadow: 0 20px 20px rgba(255,255,255,.2);
 }
 
-input {
+input[type="checkbox"] {
     display: none;
 }
 
@@ -87,7 +87,7 @@ label:hover :checked + .card {
 
 .delCard {
 	position: absolute;
-	top: 30px;
+	top: 15px;
 	right: 20px;
 	width: 24px;
 	height: 24px;

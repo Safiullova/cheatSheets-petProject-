@@ -7,7 +7,7 @@ const btnClose = document.getElementsByClassName("modal__close")[0];
 const bntPOSTCard = document.getElementById('submitCard');
 
 btnAddCard.onclick = function() {
-    modalWindowCard.style.display = "block";
+    modalWindowCard.style.display = "flex";
 }
 
 btnClose.onclick = function() {
@@ -19,28 +19,31 @@ btnClose.onclick = function() {
 bntPOSTCard.onclick = function (e) {
   e.preventDefault();
 
-  const nameCard = document.querySelector('#nameCard').value;
-  const textCard = document.getElementById('textCard').value;
+  let nameCard = document.querySelector('#nameCard').value;
+  let textCard = document.getElementById('textCard').value;
+
+  if (nameCard == '' || textCard == '' ) {
+    alert('Заполни все поля')
+    return
+  }
 
   const newCard = {
     name: `${nameCard}`,
     description: `${textCard}`
  }
-  console.log(newCard);
 
-  fetch("http://localhost:8080/cards?themeId=1",
+  fetch("https://inlaid-backbone-404620.oa.r.appspot.com:443/cards?themeId=1",
       {
           method: 'POST',
           headers: { "Content-Type": "application/json;charset=utf-8" },
           body: JSON.stringify(newCard),
       })
       .then(response => response.json())
-      .then(card => {
-          console.log(card);
-      })
-      .catch(error => console.log(error));
 
-      getCards() //Обновление всех карточек
+      .catch(error => console.log(error),
+      alert('Ошибка при передаче данных на сервер!'));
+
+  getCards(); //Обновление всех карточек
 }
 
 // END MODAL WINDOW
@@ -51,15 +54,15 @@ bntPOSTCard.onclick = function (e) {
 // для отрисовки карточек и их анимации
 
 const cardList = document.querySelector('.cards');
-const demo = document.querySelector('.demo');
+const error = document.querySelector('.error');
 const loader = document.querySelector('.loader');
 
 window.setTimeout(() => {
   getCards();
-}, 3000); // Задержка 3 секунды, крутится лоадер
+}, 2000); // Задержка 2 секунды, крутится лоадер
 
 function getCards () { // функция получения всех карточек по теме
-  fetch ("http://localhost:8080/getcardsbytheme?themeId=1")
+  fetch ("https://inlaid-backbone-404620.oa.r.appspot.com:443/getcardsbytheme?themeId=1")
 
   .then((response) => {
     return response.json();
@@ -93,7 +96,7 @@ function getCards () { // функция получения всех карто�
 
   .catch ((e) => {
     console.error(e);
-    demo.classList.remove("none");
+    error.classList.remove("none");
   })
 
   .finally(() => {
@@ -101,7 +104,7 @@ function getCards () { // функция получения всех карто�
   });
 };
 
-cardList.onclick = function (e) { //отлов клика id для удаления карточки
+cardList.onclick = function (e) { //отлов клика и id карточки для удаления карточки
   if (e.target.className === 'delCard') {
 
   id = `${e.target.parentElement.parentElement.id}`;
@@ -121,12 +124,13 @@ cardList.onclick = function (e) { //отлов клика id для удален
 
 function deleteCard (id) { //функция удаления карточки
 
-  fetch("http://localhost:8080/cards/" + id,
+  fetch("https://inlaid-backbone-404620.oa.r.appspot.com:443/cards/" + id,
   {
       method: 'DELETE',
   })
 
   .catch(error => console.log(error));
+
 };
 
 

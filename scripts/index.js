@@ -8,7 +8,7 @@ const bntPOSTTheme = document.getElementById('submitTheme');
 
 
 btnAddTheme.onclick = function() {
-    modalWindowTheme.style.display = "block";
+    modalWindowTheme.style.display = "flex";
 }
 
 btnClose.onclick = function() {
@@ -22,22 +22,24 @@ bntPOSTTheme.onclick = function (e) {
 
   const nameTheme = document.querySelector('#nameTheme').value;
 
+  if (nameTheme == '') {
+    alert('Как будет называться новая тема?')
+    return
+  }
   const newTheme = {
     name: `${nameTheme}`,
   };
-  console.log(newTheme);
 
-  fetch("http://localhost:8080/theme",
+  fetch("https://inlaid-backbone-404620.oa.r.appspot.com:443/theme",
       {
           method: 'POST',
           headers: { "Content-Type": "application/json;charset=utf-8" },
           body: JSON.stringify(newTheme),
       })
       .then(response => response.json())
-      .then(theme => {
-          console.log(theme);
-      })
-      .catch(error => console.log(error));
+
+      .catch(error => console.log(error),
+      alert('Ошибка при передаче данных на сервер!'));
 
   getTheme () //Обновление списка тем
 }
@@ -49,9 +51,15 @@ bntPOSTTheme.onclick = function (e) {
 // для списка всех тем 
 
 const themeList = document.querySelectorAll('.box');
+const error = document.querySelector('.error');
+const loader = document.querySelector('.loader');
+
+window.setTimeout(() => {
+  getTheme();
+}, 1000); // Задержка 1 секунды, крутится лоадер
 
 function getTheme () {
-  fetch ("http://localhost:8080/themes")
+  fetch ("https://inlaid-backbone-404620.oa.r.appspot.com:443/themes")
 
   .then((response) => {
     return response.json();
@@ -62,21 +70,23 @@ function getTheme () {
     for (let i = 0; i < data.length; i++) {
       const item = new Object(data[i]);
     themeList[i].innerHTML = item['name'];
-    }
+    };
+    document.querySelector('.home').classList.remove('none')
+
   })
   
   .catch ((e) => {
     console.error(e);
-    demo.classList.remove("none");
+    error.classList.remove("none");
 
   })
 
   .finally(() => {
-    // loader.classList.add("none");
+    loader.classList.add("none");
   });
   }
 
-  getTheme ();
+  // getTheme ();
 
 
 
