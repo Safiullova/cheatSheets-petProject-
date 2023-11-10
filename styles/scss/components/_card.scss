@@ -71,7 +71,7 @@ label:hover .card {
     box-shadow: 0 20px 20px rgba(255,255,255,.2);
 }
 
-input {
+input[type="checkbox"] {
     display: none;
 }
 
@@ -84,6 +84,38 @@ label:hover :checked + .card {
     box-shadow: 0 20px 20px rgba(255,255,255,.2);
 }
 
+
+.delCard {
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	width: 24px;
+	height: 24px;
+	opacity: 0.2;
+	cursor: pointer;;
+    transition: opacity ease 0.5s;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+.delCard::before,
+.delCard::after {
+	content: '';
+	position: absolute;
+	top: 10px;
+	display: block;
+	width: 24px;
+	height: 3px;
+	background: #000;
+}
+.delCard::before {
+	transform: rotate(45deg);
+}
+
+.delCard::after {
+	transform: rotate(-45deg);
+}
 
 .demo {
   display: none;

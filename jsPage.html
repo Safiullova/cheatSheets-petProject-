@@ -18,19 +18,17 @@
 
 <!-- Одностраничный сайт -->
 
-        <!-- Start Modal window с формой ввода для добавления новой карточки -->
-        <div class="modal-window" id="myModal">
-            <div class="modal-window__main">
-                <h2 class="modal-window__title">Create new card</h2>
-                    <form class="modal-window__container">
-                        <input type="text" id="nameCard" placeholder="Heading" name='nameCard' onchange="" class="heading" value="sssssssss"  autofocus maxlength="100"/><br>
-                        <textarea id="textCard" placeholder="Text..." name="description" value="xxxxx" onchange="" rows="3" autofocus maxlength="1000"></textarea><br>
-                        <input type="submit" id="submitCard" value="CREATE CARD"/>
-                    </form>
-                <div class="modal__close"></div>
-            </div>
-        </div>
-        <!-- End Modal window-->
+<!-- Start Modal window с формой ввода для добавления новой карточки -->
+    <div class="modal-window" id="myModal">
+        <p class="modal-window__title">Create new card</p>
+        <form class="modal-window__container">
+            <input type="text" class="modal-window__container-heading" id="nameCard" placeholder="Heading" name='nameCard' autofocus maxlength="100"/>
+            <textarea class="modal-window__container-text" id="textCard" placeholder="Text..." name="description" rows="3" autofocus maxlength="1000"></textarea>
+            <input type="submit" class="modal-window__container-btn" id="submitCard" value="CREATE CARD"/>
+        </form>
+        <div class="modal__close"></div>
+    </div>
+<!-- End Modal window-->
 
     <header class="header">
         <div class="header-stroke">
@@ -66,6 +64,10 @@
             <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
                 <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
             </svg>
+        </div>
+
+        <div class="error none">
+            <img src="assets/images/error.png" alt="error">
         </div>
 
         <section class="cards"></section>

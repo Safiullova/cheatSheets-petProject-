@@ -1,45 +1,49 @@
-// первым блоком script для модального окна и формы отправки
 
 // START MODAL WINDOW
-let modalWindowCard = document.getElementById('myModal');
-let btnAddCard = document.getElementById("myBtn");
-let btnClose = document.getElementsByClassName("modal__close")[0];
+const modalWindowCard = document.getElementById('myModal');
+const btnAddCard = document.getElementById("myBtn");
+const btnClose = document.getElementsByClassName("modal__close")[0];
 
 const bntPOSTCard = document.getElementById('submitCard');
-let nameCard = document.querySelector('#nameCard');
-let textCard = document.getElementById('textCard');
 
 btnAddCard.onclick = function() {
-    modalWindowCard.style.display = "block";
+    modalWindowCard.style.display = "flex";
 }
 
 btnClose.onclick = function() {
     modalWindowCard.style.display = "none";
 }
 
+// Функция для добавления карточки
 
 bntPOSTCard.onclick = function (e) {
   e.preventDefault();
 
-  let newCard = {
-    name: `${nameCard.value}`,
-    discriptional: `${textCard.value}`
-  };
-  console.log(newCard);
+  const nameCard = document.querySelector('#nameCard').value;
+  const textCard = document.getElementById('textCard').value;
 
-  fetch("http://localhost:8080/card",
+  if (nameCard == '' || textCard == '' ) {
+    alert('Заполни все поля')
+    return
+  }
+  const newCard = {
+    name: `${nameCard}`,
+    description: `${textCard}`
+ }
+
+  fetch("https://inlaid-backbone-404620.oa.r.appspot.com:443/cards?themeId=2",
       {
           method: 'POST',
           headers: { "Content-Type": "application/json;charset=utf-8" },
           body: JSON.stringify(newCard),
       })
       .then(response => response.json())
-      .then(card => {
-          console.log(card);
-      })
-      .catch(error => console.log(error));
+ 
+      .catch(error => console.log(error),
+      alert('Ошибка при передаче данных на сервер!'));
+      
+  getCards() //Обновление всех карточек
 }
-
 
 // END MODAL WINDOW
 
@@ -49,16 +53,15 @@ bntPOSTCard.onclick = function (e) {
 // для отрисовки карточек и их анимации
 
 const cardList = document.querySelector('.cards');
-const demo = document.querySelector('.demo');
+const error = document.querySelector('.error');
 const loader = document.querySelector('.loader');
 
 window.setTimeout(() => {
-  autoComplete();
+  getCards();
+}, 2000); // Задержка 2 секунды, крутится лоадер
 
-}, 3000);
-
-function autoComplete () {
-  fetch ("http://localhost:8080/getcardsbytheme?themeId=2")
+function getCards() {  // функция получения всех карточек по теме
+  fetch ("https://inlaid-backbone-404620.oa.r.appspot.com:443/getcardsbytheme?themeId=2")
 
   .then((response) => {
     return response.json();
@@ -66,12 +69,13 @@ function autoComplete () {
 
   .then((data) => {
 
+
     let card = "";
 
     for (let i = 0; i < data.length; i++) {
 
       const item = new Object(data[i]);
-      card += ` <label>
+      card += ` <label id=${item['id']}>
         <input type="checkbox"  />
         <div class="card">
           <div class="front">
@@ -81,6 +85,7 @@ function autoComplete () {
             <p class="card-titly">${item['name']}</p>
             <p class="card-text">${item['description']}</p>
           </div>
+          <div class="delCard" name='del'></div>
         </div>
       </label>`
     };
@@ -90,7 +95,7 @@ function autoComplete () {
 
   .catch ((e) => {
     console.error(e);
-    demo.classList.remove("none");
+    error.classList.remove("none");
   })
 
   .finally(() => {
@@ -98,8 +103,37 @@ function autoComplete () {
   });
 };
 
+cardList.onclick = function (e) { //отлов клика id для удаления карточки
+  if (e.target.className === 'delCard') {
+console.log(e.target.parentElement.parentElement.id)
+  id = `${e.target.parentElement.parentElement.id}`;
+  if (confirm('Удалить карточку?') == true) {
+    deleteCard (id); //функция удаления карточки
+  } else {
+    return
+  }
 
-const btnUp = {
+  setTimeout(() => {
+    getCards();
+  }, 500); //Обновление всех карточек
+
+  }
+  return
+};
+
+function deleteCard (id) { //функция удаления карточки
+
+  fetch("https://inlaid-backbone-404620.oa.r.appspot.com:443/cards/" + id,
+  {
+      method: 'DELETE',
+  })
+
+  .catch(error => console.log(error));
+};
+
+
+
+const btnUp = { // Кнопка прокрутки вверх
   el: document.querySelector('.btn-up'),
   scrolling: false,
   show() {

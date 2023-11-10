@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Шпаргалка по JS</title>
+    <title>Шпаргалки</title>
     <link rel="stylesheet" href="styles/css/normalize.css" />
     <link rel="stylesheet" href="styles/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,14 +19,12 @@
 
         <!-- Start Modal window с формой ввода для добавления новой карточки -->
     <div class="modal-window" id="myModal">
-        <div class="modal-window__main">
-                <h2 class="modal-window__title">Create new Theme</h2>
-                <div class="modal-window__container">
-                    <input type="text" id="nameTheme" placeholder="Heading" class="heading"  autofocus maxlength="100"/><br>
-                    <input type="submit" id="submitTheme" value="CREATE CARD"/>
-                </div>
-            <div class="modal__close"></div>
-        </div>
+        <p class="modal-window__title">Create new Theme</p>
+        <form class="modal-window__container">
+            <input type="text" class="modal-window__container-heading" id="nameTheme" placeholder="Heading" name='nameCard' autofocus maxlength="100"/>
+            <input type="submit" class="modal-window__container-btn" id="submitTheme" value="CREATE THEME"/>
+        </form>
+        <div class="modal__close"></div>
     </div>
 <!-- End Modal window-->
 
@@ -36,8 +34,8 @@
                 <img src="./assets/images/logo_CmndFe.svg" alt="logo">
             </div>
             <div class="header__info">
-                <h3>Learn to JAVA SCRIPT</h3>
-                <p>With our JS cheatSheet</p>
+                <h3>Help yourself remember</h3>
+                <p>Make cool cheatSheets</p>
             </div>
             <div class="header__find">
                 <div class="header__find-input">
@@ -53,26 +51,24 @@
                     <img src="./assets/icons/cross.svg" alt="add card">
                 </div>
                 <div class="create-text">
-                    <p>Create card</p>
+                    <p>Create theme</p>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <div class="loader none">
+        <div class="loader">
             <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
                 <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
             </svg>
         </div>
         
-        <div class="demo none">
-            <h2>У тебя проблемы с подключением к серверу <br/>
-                Если настроить, то получится примерно так:</h2>
-            <img src="assets/images/demo.png" alt="demo">
+        <div class="error none">
+            <img class="error-img" src="assets/images/error.png" alt="error">
         </div>
 
-        <section class="home">
+        <section class="home none">
             <div class="home__row1">
                 <a class="home__row1-item1 box" href="jsPage.html"></a>
                 <a class="home__row1-item2 box" href="springPage.html"></a>

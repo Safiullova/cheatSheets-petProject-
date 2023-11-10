@@ -18,3 +18,15 @@ main {
     border-top: 1.5px solid $wt-clr;
     border-bottom: 1.5px solid $wt-clr;
 }
+
+.error {
+    margin: 4%;
+
+    &-img {
+        width: 100%;
+    }
+}
+
+.none {
+    display: none;
+  }

@@ -28,6 +28,17 @@ main {
   border-bottom: 1.5px solid #ffffff;
 }
 
+.error {
+  margin: 4%;
+}
+.error-img {
+  width: 100%;
+}
+
+.none {
+  display: none;
+}
+
 .home {
   display: flex;
   flex-direction: column;
@@ -287,7 +298,7 @@ label:hover .card {
   box-shadow: 0 20px 20px rgba(255, 255, 255, 0.2);
 }
 
-input {
+input[type=checkbox] {
   display: none;
 }
 
@@ -298,6 +309,39 @@ input {
 label:hover :checked + .card {
   transform: rotateX(160deg);
   box-shadow: 0 20px 20px rgba(255, 255, 255, 0.2);
+}
+
+.delCard {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.2;
+  cursor: pointer;
+  transition: opacity ease 0.5s;
+}
+.delCard:hover {
+  opacity: 1;
+}
+
+.delCard::before,
+.delCard::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #000;
+}
+
+.delCard::before {
+  transform: rotate(45deg);
+}
+
+.delCard::after {
+  transform: rotate(-45deg);
 }
 
 .demo {
@@ -312,51 +356,68 @@ label:hover :checked + .card {
 }
 
 .modal-window {
-  padding: 50px;
-  position: relative;
-  max-width: 400px;
-  margin: 50px auto 0;
-  background: white;
-  border-radius: 30px;
-  background: rgba(250, 145, 89, 0.6705882353);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 0 2%;
+  z-index: 10;
+  width: 500px;
+  min-width: 400px;
+  height: 340px;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 6px solid #fea501;
+  box-shadow: 0px 0px 52px 25px #232323;
   display: none;
 }
-
-.modal-window input, .modal-window textarea {
+.modal-window__main {
   display: block;
+}
+.modal-window__title {
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  color: #000000;
+  margin-top: 25px;
+  margin-bottom: 28px;
+}
+.modal-window__container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  padding: 0 20px;
-  margin-bottom: 10px;
-  background: #f5faff;
-  line-height: 40px;
-  border-width: 0;
-  border-radius: 20px;
-  font-family: "Roboto", sans-serif;
+  align-items: center;
 }
-
-.modal-window input[type=submit] {
-  margin-top: 30px;
-  background: #f69a73;
-  border-bottom: 4px solid #d87d56;
-  color: white;
-  font-size: 14px;
+.modal-window__container-heading, .modal-window__container-text {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 2px solid #000000;
 }
-
-.modal-window textarea {
+.modal-window__container-text {
   resize: none;
 }
-
-.modal-window h3 {
-  margin-top: 0;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-  color: #707981;
+.modal-window__container-btn {
+  width: 190px;
+  height: 40px;
+  margin-bottom: 28px;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  background: #ffffff;
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 
 .modal__close {
   position: absolute;
-  top: 30px;
+  top: 20px;
   right: 20px;
   width: 24px;
   height: 24px;
@@ -367,9 +428,7 @@ label:hover :checked + .card {
 .modal__close:hover {
   opacity: 1;
 }
-
-.modal__close::before,
-.modal__close::after {
+.modal__close::before, .modal__close::after {
   content: "";
   position: absolute;
   top: 10px;
@@ -378,11 +437,9 @@ label:hover :checked + .card {
   height: 3px;
   background: #000;
 }
-
 .modal__close::before {
   transform: rotate(45deg);
 }
-
 .modal__close::after {
   transform: rotate(-45deg);
 }
@@ -525,4 +582,6 @@ label:hover :checked + .card {
   font-style: normal;
   font-weight: 500;
   line-height: 1.25rem;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
