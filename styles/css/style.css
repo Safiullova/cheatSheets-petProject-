@@ -40,6 +40,16 @@ main {
   display: none;
 }
 
+.logo {
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 0.94rem;
+}
+.logo img {
+  height: 100%;
+  padding: 0.44rem;
+}
+
 .home {
   display: flex;
   flex-direction: column;
@@ -484,148 +494,136 @@ label:hover :checked + .card {
   }
 }
 .header {
-  width: 100%;
   display: flex;
-  margin: 1rem auto;
-}
-.header .header-stroke {
-  width: 100%;
-  display: flex;
-  margin: 1.88rem auto;
-}
-.header .header-stroke .header__logo {
-  width: 2rem;
-  display: flex;
-  background-color: #ffffff;
-  border: none;
-  border-radius: 0.94rem;
-}
-.header .header-stroke .header__logo img {
-  width: 100%;
-  padding: 0.44rem;
-}
-.header .header-stroke .header__info {
-  width: 29rem;
-  display: flex;
-  flex-direction: column;
-  margin-left: 1.88rem;
-  row-gap: 1.62rem;
-}
-.header .header-stroke .header__info h3 {
+  margin: 2.5rem 4%;
   color: #ffffff;
   font-family: Montserrat;
-  font-size: 2.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.25rem;
-}
-.header .header-stroke .header__info p {
-  color: #ffffff;
-  font-family: Montserrat;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 500;
   line-height: 1.25rem;
+  justify-content: space-between;
 }
-.header .header-stroke .header__find {
-  width: 12.375rem;
+.header .header__info {
   display: flex;
   flex-direction: column;
-  margin-left: 18rem;
+  justify-content: center;
+}
+.header .header__info h3 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+}
+.header .header__info p {
+  font-size: 24px;
+  line-height: 3rem;
+}
+.header .header__find {
+  width: 12.375rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
   row-gap: 0.56rem;
 }
-.header .header-stroke .header__find .header__find-input {
+.header .header__find .header__find-input {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-.header .header-stroke .header__find .header__find-input .header__find-input-value {
-  width: 9.375rem;
-  display: flex;
+.header .header__find .header__find-input .header__find-input-value {
+  width: 150px;
+  height: 40px;
   padding: 0.1rem;
   background-color: transparent;
   border: 2px solid #ffffff;
   border-radius: 0.63rem;
 }
-.header .header-stroke .header__find .header__find-input .header__find-input-submit {
-  width: 2.5rem;
-  display: flex;
+.header .header__find .header__find-input .header__find-input-submit {
+  width: 40px;
+  color: #ffffff;
   background-color: transparent;
   border: 2px solid #ffffff;
   border-radius: 0.625rem;
 }
-.header .header-stroke .header__find .header__find-text p {
+.header .header__find .header__find-text {
   margin-left: 1.69rem;
-  color: #ffffff;
-  font-family: Montserrat;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.25rem;
 }
-.header .header-stroke .header__create {
-  width: 10.375rem;
+.header .header__create {
   display: flex;
+  margin-top: 1rem;
   flex-direction: column;
+  align-items: center;
   row-gap: 0.56rem;
+  text-align: center;
 }
-.header .header-stroke .header__create .create-button {
+.header .header__create .create-button {
   width: 2.5rem;
-  display: flex;
 }
-.header .header-stroke .header__create .create-button img {
+.header .header__create .create-button img {
   width: 100%;
 }
-.header .header-stroke .header__create .create-button p {
-  color: #ffffff;
-  font-family: Montserrat;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.25rem;
-}
-.header .header-stroke .btn__set {
+.header .btn__set {
   display: flex;
+  margin-top: 1rem;
   align-items: baseline;
 }
-.header .header-stroke .btn__set .btn__login-wrapper .btn__login {
+.header .btn__set .btn__login-wrapper .btn__login {
   width: 90px;
   height: 40px;
   flex-shrink: 0;
   padding: 10px 7px;
-  margin-top: 25px;
   border-radius: 10px;
   border: 2px solid #ffffff;
-  background-color: #000;
+  background-color: #232323;
   color: #ffffff;
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 20px;
   text-transform: uppercase;
   text-align: center;
 }
-.header .header-stroke .btn__set .btn__signup-wrapper {
+.header .btn__set .btn__signup-wrapper {
   margin-right: 40px;
   display: flex;
   justify-content: center;
 }
-.header .header-stroke .btn__set .btn__signup-wrapper .btn__signup {
+.header .btn__set .btn__signup-wrapper .btn__signup {
   width: 105px;
   height: 40px;
   flex-shrink: 0;
   padding: 10px 7px;
-  margin-top: 25px;
   border-radius: 10px;
   border: 2px solid #ffffff;
-  background-color: #000;
+  background-color: #232323;
   color: #ffffff;
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 20px;
   text-transform: uppercase;
   text-align: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5rem 4%;
+  color: #ffffff;
+  font-family: Montserrat;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+.footer__info {
+  display: flex;
+}
+.footer__info-people {
+  margin-left: 5rem;
+  line-height: 30px;
+}
+.footer__logo {
+  display: flex;
+  align-items: center;
+}
+.footer__logo-text {
+  text-align: right;
+  margin-right: 2rem;
+  line-height: 30px;
 }
 
 .signup__overlay {
@@ -934,4 +932,6 @@ label:hover :checked + .card {
 
 .login__btn-close:after {
   transform: rotate(-45deg);
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

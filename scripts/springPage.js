@@ -39,10 +39,14 @@ bntPOSTCard.onclick = function (e) {
       })
       .then(response => response.json())
  
-      .catch(error => console.log(error),
-      alert('Ошибка при передаче данных на сервер!'));
+      .catch(error => console.log(error))
       
-  getCards() //Обновление всех карточек
+      .finally(modalWindowCard.style.display = "none");
+
+  document.querySelector('#nameCard').value = '';
+  document.getElementById('textCard').value = '';
+
+  getCards(); //Обновление всех карточек
 }
 
 // END MODAL WINDOW
@@ -105,11 +109,13 @@ function getCards() {  // функция получения всех карто�
 
 cardList.onclick = function (e) { //отлов клика id для удаления карточки
   if (e.target.className === 'delCard') {
-console.log(e.target.parentElement.parentElement.id)
-  id = `${e.target.parentElement.parentElement.id}`;
+    id = `${e.target.parentElement.parentElement.id}`;
+
   if (confirm('Удалить карточку?') == true) {
     deleteCard (id); //функция удаления карточки
+
   } else {
+    
     return
   }
 

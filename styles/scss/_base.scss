@@ -30,3 +30,14 @@ main {
 .none {
     display: none;
   }
+
+  .logo {
+    height: 100px;
+    background-color: $wt-clr;
+    border-radius: 0.94rem;
+
+    img {
+        height: 100%;
+        padding: 0.44rem;
+  }
+}

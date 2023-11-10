@@ -99,10 +99,11 @@ bntPOSTTheme.onclick = function (e) {
   })
     .then((response) => response.json())
 
-    .catch(
-      (error) => console.log(error),
-      alert("Ошибка при передаче данных на сервер!")
-    );
+    .catch(error => console.log(error))
+      
+    .finally(modalWindowTheme.style.display = "none");
+
+  document.querySelector('#nameTheme').value = '';
 
   getTheme(); //Обновление списка тем
 };
@@ -144,8 +145,6 @@ function getTheme() {
       loader.classList.add("none");
     });
 }
-
-// getTheme ();
 
 const btnUp = {
   // Кнопка прокрутки вверх
