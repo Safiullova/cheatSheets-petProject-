@@ -1,0 +1,199 @@
+//затемнение фона
+.signup__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 0;
+  //   display: none;
+}
+
+#signUp,
+#signupOverlay {
+  display: none;
+}
+
+.signup {
+  position: absolute;
+  z-index: 10;
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  //   display: none;
+
+  &__form {
+    padding: 25px 40px;
+    background-color: $wt-clr;
+    border-radius: 20px;
+    border: 6px solid $yel-clr;
+    box-shadow: 0px 0px 52px 25px $shad-clr;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.signup__h2 {
+  padding: 0;
+  margin: 0;
+  color: $blk-clr;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+}
+
+.signup__inps {
+  width: 420px;
+  justify-content: center;
+
+  .signup__inp {
+    width: 380px;
+    padding: 10px 14px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 2px solid $blk-clr;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+
+.signup__btn-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.signup__btn {
+  width: 100px;
+  padding: 10px;
+  margin-top: 25px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.25);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.signup__checkbox {
+  padding-top: 15px;
+}
+
+/* скрываем реальный чекбокс */
+.signup__checkbox-real {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+// чекбокс в моменте выбора
+.signup__checkbox-real:focus + .signup__checkbox-custom {
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 2px #fea501;
+}
+
+/* стилизуем новый чекбокс */
+.signup__checkbox-custom {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0 13px;
+  display: inline-block;
+  background-color: #fff;
+  border: 2px solid #6f6f6f;
+  border-radius: 5px;
+  vertical-align: sub;
+}
+
+.signup__checkbox-custom::before {
+  content: "";
+
+  //стилизуем галочку
+  display: inline-block;
+  background-image: url("../../assets/icons/check-wt.svg");
+  background-position: center center;
+  background-size: 14px;
+  background-repeat: no-repeat;
+
+  /* Выравниваем галочку по центру */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0); //двигаем и уменьшение галки до размера 0
+
+  transition: 0.2s ease-in; //плавное увеличение галки
+}
+
+/* Активируем декоративный чекбокс */
+
+.signup__checkbox-real:checked + .signup__checkbox-custom::before {
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: #fea501;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.signup__checkbox-label {
+  color: #6f6f6f;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.signup__checkbox-a {
+  color: #6f6f6f;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-decoration-line: underline;
+}
+
+/* Кнопка закрытия */
+.signup__btn-close {
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  border: none;
+  background: none;
+  opacity: 0.4;
+}
+
+.signup__btn-close:hover {
+  opacity: 1;
+}
+
+.signup__btn-close:before,
+.signup__btn-close:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #000;
+  border-radius: 10px;
+}
+
+.signup__btn-close:before {
+  transform: rotate(45deg);
+}
+
+.signup__btn-close:after {
+  transform: rotate(-45deg);
+}
