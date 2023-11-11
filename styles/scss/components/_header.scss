@@ -1,5 +1,4 @@
 .header {
-//   width: 100%;
     display: flex;
     margin: 2.5rem 4%;
     color: $wt-clr;
@@ -11,10 +10,7 @@
     line-height: 1.25rem;
     justify-content: space-between;
 
-
-
-
-    .header__info {
+    &__info {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -31,29 +27,28 @@
       }
     }
 
-    .header__find {
+    &__find {
       width: 12.375rem;
       margin-top: 1rem;
       display: flex;
       flex-direction: column;
       row-gap: 0.56rem;
 
-      .header__find-input {
+      &-input {
         width: 100%;
         display: flex;
         justify-content: space-between;
 
-        .header__find-input-value {
+        &-value {
           width: 150px;
           height: 40px;
           padding: 0.1rem;
-
           background-color: transparent;
           border: 2px solid $wt-clr;
           border-radius: 0.63rem;
         }
 
-        .header__find-input-submit {
+        &-submit {
           width: 40px;
           color: $wt-clr;
           background-color: transparent;
@@ -62,15 +57,12 @@
         }
       }
 
-      .header__find-text {
-        
+      &-text {
           margin-left: 1.69rem;
-        //   margin-top: 9px;
-        
       }
     }
 
-    .header__create {
+    &__create {
       display: flex;
       margin-top: 1rem;
       flex-direction: column;
@@ -98,36 +90,31 @@
           width: 90px;
           height: 40px;
           flex-shrink: 0;
-          padding: 10px 7px;
-        //   margin-top: 25px;
           border-radius: 10px;
           border: 2px solid $wt-clr;
           background-color: $bg-clr;
           color: $wt-clr;
           text-transform: uppercase;
           text-align: center;
+          align-items: center;
         }
       }
 
       .btn__signup-wrapper {
         margin-right: 40px;
-        display: flex;
-        justify-content: center;
 
         .btn__signup {
           width: 105px;
           height: 40px;
           flex-shrink: 0;
-          padding: 10px 7px;
-        //   margin-top: 25px;
           border-radius: 10px;
           border: 2px solid $wt-clr;
           background-color: $bg-clr;
           color: $wt-clr;
           text-transform: uppercase;
           text-align: center;
+          align-items: center;
         }
       }
     }
   }
-// }

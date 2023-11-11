@@ -57,7 +57,7 @@ main {
 }
 .home .box {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   border-radius: 15px;
   color: #000000;
@@ -69,6 +69,7 @@ main {
   transition: transform 0.25s;
   cursor: pointer;
   text-decoration: none;
+  text-align: center;
 }
 .home .box:hover {
   transform: scale(1.1);
@@ -182,6 +183,54 @@ main {
 .home__row2-item14 {
   grid-area: item14;
   background-color: #552706;
+}
+.home__row3 {
+  display: grid;
+  gap: 45px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "item1 item2 item3 item4 item9 item10 item10" "item5 item6 item7 item8 item9 item10 item10";
+}
+.home__row3-item1 {
+  grid-area: item1;
+  background-color: #f6e6cf;
+  height: 150px;
+}
+.home__row3-item2 {
+  grid-area: item2;
+  background-color: #552706;
+}
+.home__row3-item3 {
+  grid-area: item3;
+  background-color: #f88b50;
+}
+.home__row3-item4 {
+  grid-area: item4;
+  background-color: #ffffff;
+}
+.home__row3-item5 {
+  grid-area: item5;
+  background-color: #f6e6cf;
+}
+.home__row3-item6 {
+  grid-area: item6;
+  background-color: #552706;
+}
+.home__row3-item7 {
+  grid-area: item7;
+  background-color: #f88b50;
+}
+.home__row3-item8 {
+  grid-area: item8;
+  background-color: #ffffff;
+}
+.home__row3-item9 {
+  grid-area: item9;
+  background-color: #fea501;
+}
+.home__row3-item10 {
+  grid-area: item10;
+  background-color: #aa8946;
 }
 
 .loader {
@@ -376,7 +425,7 @@ label:hover :checked + .card {
   z-index: 10;
   width: 500px;
   min-width: 400px;
-  height: 340px;
+  height: max-content;
   flex-direction: column;
   align-items: center;
   background: #ffffff;
@@ -504,33 +553,33 @@ label:hover :checked + .card {
   line-height: 1.25rem;
   justify-content: space-between;
 }
-.header .header__info {
+.header__info {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.header .header__info h3 {
+.header__info h3 {
   font-size: 40px;
   font-weight: 700;
   line-height: 40px;
 }
-.header .header__info p {
+.header__info p {
   font-size: 24px;
   line-height: 3rem;
 }
-.header .header__find {
+.header__find {
   width: 12.375rem;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   row-gap: 0.56rem;
 }
-.header .header__find .header__find-input {
+.header__find-input {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-.header .header__find .header__find-input .header__find-input-value {
+.header__find-input-value {
   width: 150px;
   height: 40px;
   padding: 0.1rem;
@@ -538,17 +587,17 @@ label:hover :checked + .card {
   border: 2px solid #ffffff;
   border-radius: 0.63rem;
 }
-.header .header__find .header__find-input .header__find-input-submit {
+.header__find-input-submit {
   width: 40px;
   color: #ffffff;
   background-color: transparent;
   border: 2px solid #ffffff;
   border-radius: 0.625rem;
 }
-.header .header__find .header__find-text {
+.header__find-text {
   margin-left: 1.69rem;
 }
-.header .header__create {
+.header__create {
   display: flex;
   margin-top: 1rem;
   flex-direction: column;
@@ -556,10 +605,10 @@ label:hover :checked + .card {
   row-gap: 0.56rem;
   text-align: center;
 }
-.header .header__create .create-button {
+.header__create .create-button {
   width: 2.5rem;
 }
-.header .header__create .create-button img {
+.header__create .create-button img {
   width: 100%;
 }
 .header .btn__set {
@@ -571,30 +620,28 @@ label:hover :checked + .card {
   width: 90px;
   height: 40px;
   flex-shrink: 0;
-  padding: 10px 7px;
   border-radius: 10px;
   border: 2px solid #ffffff;
   background-color: #232323;
   color: #ffffff;
   text-transform: uppercase;
   text-align: center;
+  align-items: center;
 }
 .header .btn__set .btn__signup-wrapper {
   margin-right: 40px;
-  display: flex;
-  justify-content: center;
 }
 .header .btn__set .btn__signup-wrapper .btn__signup {
   width: 105px;
   height: 40px;
   flex-shrink: 0;
-  padding: 10px 7px;
   border-radius: 10px;
   border: 2px solid #ffffff;
   background-color: #232323;
   color: #ffffff;
   text-transform: uppercase;
   text-align: center;
+  align-items: center;
 }
 
 .footer {

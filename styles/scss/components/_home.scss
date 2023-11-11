@@ -5,7 +5,7 @@
 
 .box  {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         border-radius: 15px;
         color: $blk-clr; 
@@ -17,6 +17,9 @@
         transition: transform 0.25s;
         cursor: pointer;
         text-decoration: none;
+        text-align: center;
+
+
     }
 
     .box:hover {
@@ -177,6 +180,69 @@
             background-color: $br-clr;
         }
         
+    }
+
+    &__row3 {
+        display: grid;
+        gap: 45px;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+        "item1 item2 item3 item4 item9 item10 item10"
+        "item5 item6 item7 item8 item9 item10 item10";
+
+
+
+        &-item1 {
+            grid-area: item1;
+            background-color: $lite-clr;
+            height: 150px;
+        }
+        
+        &-item2 {
+            grid-area: item2;
+            background-color: $br-clr;
+        }
+    
+        &-item3 {
+            grid-area: item3;
+            background-color: $or-clr;
+        }
+    
+        &-item4 {
+            grid-area: item4;
+            background-color: $wt-clr;
+        }
+
+        &-item5 {
+            grid-area: item5;
+            background-color: $lite-clr;
+            }
+
+        &-item6 {
+            grid-area: item6;
+            background-color: $br-clr;
+        }
+    
+        &-item7 {
+            grid-area: item7;
+            background-color: $or-clr;
+        }
+    
+        &-item8 {
+            grid-area: item8;
+            background-color: $wt-clr;
+        }
+        
+        &-item9 {
+            grid-area: item9;
+            background-color: $yel-clr;
+        }
+    
+        &-item10 {
+            grid-area: item10;
+            background-color: $yelbr-clr;
+        }
     }
 }
 
