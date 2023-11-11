@@ -40,8 +40,12 @@ bntPOSTCard.onclick = function (e) {
       })
       .then(response => response.json())
 
-      .catch(error => console.log(error),
-      alert('Ошибка при передаче данных на сервер!'));
+      .catch(error => console.log(error))
+      
+      .finally(modalWindowCard.style.display = "none");
+
+  document.querySelector('#nameCard').value = '';
+  document.getElementById('textCard').value = '';
 
   getCards(); //Обновление всех карточек
 }

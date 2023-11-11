@@ -1,0 +1,33 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 4%;
+    color: $wt-clr;
+    font-family: Montserrat;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25rem;
+
+    &__info {
+        display: flex;
+
+        &-people{
+            margin-left: 5rem;
+            line-height: 30px;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+
+        &-text {
+            text-align: right;
+            margin-right: 2rem;
+            line-height: 30px
+        }
+    }
+}

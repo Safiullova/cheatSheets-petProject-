@@ -1,128 +1,88 @@
 .header {
-  width: 100%;
-  display: flex;
-  margin: 1rem auto;
-
-  .header-stroke {
-    width: 100%;
     display: flex;
-    margin: 1.88rem auto;
+    margin: 2.5rem 4%;
+    color: $wt-clr;
 
-    .header__logo {
-      width: 2rem;
-      display: flex;
+    font-family: Montserrat;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25rem;
+    justify-content: space-between;
 
-      background-color: $wt-clr;
-      border: none;
-      border-radius: 0.94rem;
-
-      img {
-        width: 100%;
-        padding: 0.44rem;
-      }
-    }
-
-    .header__info {
-      width: 29rem;
+    &__info {
       display: flex;
       flex-direction: column;
-      margin-left: 1.88rem;
-      row-gap: 1.62rem;
+      justify-content: center;
 
       h3 {
-        color: $wt-clr;
-        font-family: Montserrat;
-        font-size: 2.5rem;
-        font-style: normal;
+        font-size: 40px;
         font-weight: 700;
-        line-height: 1.25rem;
+        line-height: 40px;
       }
 
       p {
-        color: $wt-clr;
-        font-family: Montserrat;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 1.25rem;
+        font-size: 24px;
+        line-height: 3rem;
       }
     }
 
-    .header__find {
+    &__find {
       width: 12.375rem;
+      margin-top: 1rem;
       display: flex;
       flex-direction: column;
-      margin-left: 18rem;
       row-gap: 0.56rem;
 
-      .header__find-input {
+      &-input {
         width: 100%;
         display: flex;
         justify-content: space-between;
 
-        .header__find-input-value {
-          width: 9.375rem;
-          display: flex;
+        &-value {
+          width: 150px;
+          height: 40px;
           padding: 0.1rem;
-
           background-color: transparent;
           border: 2px solid $wt-clr;
           border-radius: 0.63rem;
         }
 
-        .header__find-input-submit {
-          width: 2.5rem;
-          display: flex;
-
+        &-submit {
+          width: 40px;
+          color: $wt-clr;
           background-color: transparent;
           border: 2px solid $wt-clr;
           border-radius: 0.625rem;
         }
       }
 
-      .header__find-text {
-        p {
+      &-text {
           margin-left: 1.69rem;
-
-          color: $wt-clr;
-          font-family: Montserrat;
-          font-size: 1.25rem;
-          font-style: normal;
-          font-weight: 500;
-          line-height: 1.25rem;
-        }
       }
     }
 
-    .header__create {
-      width: 10.375rem;
+    &__create {
       display: flex;
+      margin-top: 1rem;
       flex-direction: column;
+      align-items: center;
       row-gap: 0.56rem;
+      text-align: center;
 
       .create-button {
         width: 2.5rem;
-        display: flex;
 
         img {
           width: 100%;
         }
       }
 
-      .create-button {
-        p {
-          color: $wt-clr;
-          font-family: Montserrat;
-          font-size: 1.25rem;
-          font-style: normal;
-          font-weight: 500;
-          line-height: 1.25rem;
-        }
-      }
     }
 
     .btn__set {
       display: flex;
+      margin-top: 1rem;
       align-items: baseline;
 
       .btn__login-wrapper {
@@ -130,44 +90,31 @@
           width: 90px;
           height: 40px;
           flex-shrink: 0;
-          padding: 10px 7px;
-          margin-top: 25px;
           border-radius: 10px;
           border: 2px solid $wt-clr;
-          background-color: #000;
+          background-color: $bg-clr;
           color: $wt-clr;
-          font-family: "Montserrat", sans-serif;
-          font-size: 20px;
-          font-weight: 500;
-          line-height: 20px;
           text-transform: uppercase;
           text-align: center;
+          align-items: center;
         }
       }
 
       .btn__signup-wrapper {
         margin-right: 40px;
-        display: flex;
-        justify-content: center;
 
         .btn__signup {
           width: 105px;
           height: 40px;
           flex-shrink: 0;
-          padding: 10px 7px;
-          margin-top: 25px;
           border-radius: 10px;
           border: 2px solid $wt-clr;
-          background-color: #000;
+          background-color: $bg-clr;
           color: $wt-clr;
-          font-family: "Montserrat", sans-serif;
-          font-size: 20px;
-          font-weight: 500;
-          line-height: 20px;
           text-transform: uppercase;
           text-align: center;
+          align-items: center;
         }
       }
     }
   }
-}
